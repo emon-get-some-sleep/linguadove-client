@@ -1,9 +1,14 @@
-.slick-prev {
+/* .slick-prev {
     left: 3% !important;
     z-index: 10;
-    background-color: yellow;
+    
   }
   .slick-next {
     right: 3% !important;
     z-index: 10;
+  } */
+
+  .clip-image-one{
+    -webkit-clip-path: polygon(71% 5%, 100% 50%, 93% 100%, 0% 100%, 17% 55%, 34% 6%);
+    clip-path: polygon(71% 5%, 100% 50%, 93% 100%, 0% 100%, 17% 55%, 34% 6%);
   }
