@@ -1,0 +1,41 @@
+
+  .button-wrapper {
+    border: none;
+    outline: none;
+    border-radius: 500px;
+    background: linear-gradient(to right, #2f57ef, #B260EC);
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    z-index:1;
+  }
+  .button-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 3px;
+    left: 3px;
+    background: linear-gradient(to right, #fff, #EFF1FF);
+    border-radius: 497px;
+    z-index: -1;
+    transition: 200ms;
+  }
+  .button-wrapper::after {
+    content: attr(data);
+    font-size: 16px;
+    background: linear-gradient(to left, #2f57ef, #B260EC);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: 200ms;
+  }
+  .button-wrapper:hover::before {
+    opacity: 50%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+  .button-wrapper:hover::after{
+    color: white;
+  }
