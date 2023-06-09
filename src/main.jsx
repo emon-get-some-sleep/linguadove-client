@@ -6,9 +6,13 @@ import {
   RouterProvider
 } from "react-router-dom";
 import router from './routes/Routes.jsx';
-
+// bg-gradient-to-br from-gradient-color-1 to-gradient-color-2
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <RouterProvider router={router} />
+      <div className='bg-gradient-to-br from-[#FFFFFF] to-[#EFF1FF] h-[100vh]'>
+        <div className='max-w-screen-xl mx-auto'>
+          <RouterProvider router={router} />
+        </div>
+      </div>
   </React.StrictMode>,
 )

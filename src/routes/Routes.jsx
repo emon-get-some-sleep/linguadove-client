@@ -10,7 +10,7 @@ import Main from "../Layout/Main";
       children: [
         {
             path: '/',
-            element: <div>Hi</div>
+            element: <div></div>
         }
       ]
     },
