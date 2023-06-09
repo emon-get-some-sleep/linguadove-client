@@ -1,0 +1,19 @@
+.animated-div {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 200px;
+    height: 100vh;
+    background-color: #fff;
+    transition: 0.5s;
+  }
+  
+  .animated-div.visible {
+    right: 0;
+  }
+  
+  @media screen and (max-width: 400px) {
+    .animated-div{
+        width: 100%;
+    }
+  }
