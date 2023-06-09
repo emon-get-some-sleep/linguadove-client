@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex flex-col">
-        <h2 className="font-bold text-xl">Useful Links</h2>
+        <h2 className="font-bold text-xl mb-5">Useful Links</h2>
         <Link className="text-[#6B7385]">Marketplace</Link>
         <Link className="text-[#6B7385]">FAQ</Link>
         <Link className="text-[#6B7385]">About Us</Link>
@@ -44,7 +44,7 @@ const Footer = () => {
         <Link className="text-[#6B7385]">Privacy Policy</Link>
       </div>
       <div className="flex flex-col">
-        <h2 className="font-bold text-xl">Our Community</h2>
+        <h2 className="font-bold text-xl mb-5">Our Community</h2>
         <Link className="text-[#6B7385]">Contact Us</Link>
         <Link className="text-[#6B7385]">Become Teacher</Link>
         <Link className="text-[#6B7385]">Blog</Link>
@@ -55,10 +55,10 @@ const Footer = () => {
         <Link className="text-[#6B7385]">Events</Link>
       </div>
       <div className="flex flex-col">
-        <h2 className="font-bold text-xl">Get Contact</h2>
+        <h2 className="font-bold text-xl mb-5">Get Contact</h2>
         <Link className="text-[#6B7385]">Phone : (406) 555-0120</Link>
         <Link className="text-[#6B7385]">Email: admin@example.com</Link>
-        <h2 className="font-bold text-lg">News Letter</h2>
+        <h2 className="font-bold my-5">News Letter</h2>
         <p>
         2000+ Our students are subscribe Around the World.<br />
         Don’t be shy introduce yourself!

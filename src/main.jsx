@@ -10,7 +10,7 @@ import router from './routes/Routes.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <div className='bg-gradient-to-br from-[#FFFFFF] to-[#EFF1FF]'>
-        <div className='max-w-screen-xl mx-auto'>
+        <div className='max-w-screen-xl mx-auto overflow-hidden'>
           <RouterProvider router={router} />
         </div>
       </div>

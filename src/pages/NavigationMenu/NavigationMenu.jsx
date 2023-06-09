@@ -50,7 +50,7 @@ const NavigationMenu = () => {
       </nav>
       <div>
       
-      <div className={`animated-div  ${isDivVisible ? 'visible' : ''}`}>
+      <div className={`animated-div p-2  ${isDivVisible ? 'visible' : ''}`}>
      <div className="flex justify-between items-center">
       <div className="md:text-lg text-sm font-bold flex items-center">
       <img src={logo} className="max-w-[50px] max-h-[50px] object-cover" alt="" />
