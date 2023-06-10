@@ -8,6 +8,7 @@ import Classes from "../components/Classes/Classes";
 import Dashboard from "../shared/Dashboard/Dashboard";
 import SelectedClass from "../components/SelectedClass/SelectedClass";
 import EnrolledClasses from "../components/EnrolledClasses/EnrolledClasses";
+import AddClass from "../components/AddClass/AddClass";
 
   const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ import EnrolledClasses from "../components/EnrolledClasses/EnrolledClasses";
         {
           path: 'enrolledclasses',
           element: <EnrolledClasses></EnrolledClasses>
+        },
+        {
+          path: 'addaclass',
+          element: <AddClass></AddClass>
         }
       ]
     }

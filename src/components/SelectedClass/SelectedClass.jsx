@@ -16,7 +16,8 @@ const SelectedClass = () => {
                 <th class="bg-[#2f57ef] text-white font-bold">Instructor name</th>
                 <th class="bg-[#2f57ef] text-white font-bold">Available seats</th>
                 <th class="bg-[#2f57ef] text-white font-bold">Price</th>
-                <th class="bg-[#2f57ef] text-white font-bold">User</th>
+                <th class="bg-[#2f57ef] text-white font-bold">PAY</th>
+                <th class="bg-[#2f57ef] text-white font-bold">DELETE</th>
               </tr>
             </thead>
   
@@ -42,8 +43,13 @@ const SelectedClass = () => {
                 <td>20</td>
                 <td>$ 300</td>
                 <td>
-                  <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Enroll Now
+                  <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white font-bold py-2 px-4 rounded">
+                    PAY NOW
+                  </button>
+                </td>
+                <td>
+                  <button className="bg-[#DC143C] hover:bg-red-500 text-white font-bold py-2 px-4 rounded">
+                    DELETE CLASS
                   </button>
                 </td>
               </tr>
