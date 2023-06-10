@@ -4,7 +4,7 @@ import { FaPlayCircle, FaUsers } from 'react-icons/fa';
 const PopularCourses = () => {
     return (
         <div className='mt-[100px]'>
-            <h2 className='text-[#192335] font-bold text-[42px] text-center'>Popular Classes</h2>
+            <h2 className='text-[#192335] font-bold text-[25px] md:text-[42px] text-center'>Popular Classes</h2>
             <p className='mt-6 text-[#6B7385] text-center mb-[50px]'>Loved By Many Students</p>
             <div className='grid px-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'> 
                 <div className='bg-white rounded-[30px] shadow-lg px-2 py-6 flex flex-col items-center justify-center'>

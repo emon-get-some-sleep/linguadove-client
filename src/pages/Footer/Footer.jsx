@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/f
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <div className="flex justify-between flex-wrap space-y-[20px] mt-[100px] p-3 md:p-10">
+    <div className="flex justify-between items-center flex-wrap gap-5 space-y-[20px] mt-[100px] p-3 md:p-10">
       <div className="space-y-[20px]">
         <div className="md:text-lg text-sm font-bold flex items-center">
           <img
@@ -32,7 +32,7 @@ const Footer = () => {
          </button>
         </div>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full sm:w-auto ">
         <h2 className="font-bold text-xl mb-5">Useful Links</h2>
         <Link className="text-[#6B7385]">Marketplace</Link>
         <Link className="text-[#6B7385]">FAQ</Link>

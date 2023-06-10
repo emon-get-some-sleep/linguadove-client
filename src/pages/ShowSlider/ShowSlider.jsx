@@ -51,11 +51,11 @@ const ShowSlider = () => {
                   </h3>
                 </div>
               </div>
-              <div className="flex gap-[20px] my-[40px]">
-                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded hidden md:block">
+              <div className="flex flex-col md:flex-row gap-[20px] my-[40px]">
+                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded  ">
                   SignUp Now
                 </button>
-                <button className="border-2 hover:bg-blue-700 text-[#192335] font-bold py-2 px-5 rounded hidden md:block">
+                <button className="border-2 hover:bg-blue-700 text-[#192335] font-bold py-2 px-5 rounded  ">
                   Find Courses
                 </button>
               </div>
@@ -100,11 +100,11 @@ const ShowSlider = () => {
                   </h3>
                 </div>
               </div>
-              <div className="flex gap-[20px] my-[40px]">
-                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded hidden md:block">
+              <div className="flex flex-col md:flex-row gap-[20px] my-[40px]">
+                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded  ">
                   SignUp Now
                 </button>
-                <button className="border-2 hover:bg-blue-700 text-[#192335] font-bold py-2 px-5 rounded hidden md:block">
+                <button className="border-2 hover:bg-blue-700 text-[#192335] font-bold py-2 px-5 rounded  ">
                   Find Courses
                 </button>
               </div>
@@ -148,11 +148,11 @@ const ShowSlider = () => {
                   </h3>
                 </div>
               </div>
-              <div className="flex gap-[20px] my-[40px]">
-                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded hidden md:block">
+              <div className="flex flex-col md:flex-row gap-[20px] my-[40px]">
+                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded  ">
                   SignUp Now
                 </button>
-                <button className="border-2 hover:bg-blue-700 text-[#192335] font-bold py-2 px-5 rounded hidden md:block">
+                <button className="border-2 hover:bg-blue-700 text-[#192335] font-bold py-2 px-5 rounded  ">
                   Find Courses
                 </button>
               </div>
@@ -196,11 +196,11 @@ const ShowSlider = () => {
                   </h3>
                 </div>
               </div>
-              <div className="flex gap-[20px] my-[40px]">
-                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded hidden md:block">
+              <div className="flex flex-col md:flex-row gap-[20px] my-[40px]">
+                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded  ">
                   SignUp Now
                 </button>
-                <button className="border-2 hover:bg-blue-700 text-[#192335] font-bold py-2 px-5 rounded hidden md:block">
+                <button className="border-2 hover:bg-blue-700 text-[#192335] font-bold py-2 px-5 rounded  ">
                   Find Courses
                 </button>
               </div>
@@ -244,11 +244,11 @@ const ShowSlider = () => {
                   </h3>
                 </div>
               </div>
-              <div className="flex gap-[20px] my-[40px]">
-                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded hidden md:block">
+              <div className="flex flex-col md:flex-row gap-[20px] my-[40px]">
+                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded  ">
                   SignUp Now
                 </button>
-                <button className="border-2 hover:bg-blue-700 text-[#192335] font-bold py-2 px-5 rounded hidden md:block">
+                <button className="border-2 hover:bg-blue-700 text-[#192335] font-bold py-2 px-5 rounded  ">
                   Find Courses
                 </button>
               </div>
@@ -292,11 +292,11 @@ const ShowSlider = () => {
                   </h3>
                 </div>
               </div>
-              <div className="flex gap-[20px] my-[40px]">
-                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded hidden md:block">
+              <div className="flex flex-col md:flex-row gap-[20px] my-[40px]">
+                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded  ">
                   SignUp Now
                 </button>
-                <button className="border-2 hover:bg-blue-700 text-[#192335] font-bold py-2 px-5 rounded hidden md:block">
+                <button className="border-2 hover:bg-blue-700 text-[#192335] font-bold py-2 px-5 rounded  ">
                   Find Courses
                 </button>
               </div>
