@@ -1,0 +1,11 @@
+.instructor-images{
+    border-radius: 30px;
+    transform: rotate(-35deg) scale(1.2);
+    
+    transition: all 0.5s;
+
+
+}
+.instructor-images:hover{
+    transform: rotate(-20deg) scale(1.2);
+}
