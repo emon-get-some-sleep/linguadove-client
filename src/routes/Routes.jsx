@@ -4,6 +4,7 @@ import {
 import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
 import Instructors from "../components/Instructors/Instructors";
+import Classes from "../components/Classes/Classes";
 
   const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ import Instructors from "../components/Instructors/Instructors";
         {
           path: 'instructors',
           element: <Instructors></Instructors>
+        },
+        {
+          path: 'classes',
+          element: <Classes></Classes>
         }
       ]
     },

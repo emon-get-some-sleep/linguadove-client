@@ -33,8 +33,8 @@ const NavigationMenu = () => {
           <Link to="/instructors" className="hover:text-[#2f57ef]">
           Instructors
           </Link>
-          <Link to="/courses" className="hover:text-[#2f57ef]">
-            Courses
+          <Link to="/classes" className="hover:text-[#2f57ef]">
+            Classes
           </Link>
         </div>
 
