@@ -13,6 +13,7 @@ import MyClasses from "../components/MyClasses/MyClasses";
 import ManageClasses from "../components/ManageClasses/ManageClasses";
 import ManageUsers from "../components/ManageUsers/ManageUsers";
 import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
 
   const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ import Login from "../components/Login/Login";
         {
           path: 'login',
           element: <Login></Login>
+        },
+        {
+          path: 'register',
+          element: <Register></Register>
         },
         
       ]
