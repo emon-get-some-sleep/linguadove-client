@@ -36,6 +36,9 @@ const NavigationMenu = () => {
           <Link to="/classes" className="hover:text-[#2f57ef]">
             Classes
           </Link>
+          <Link to="/login" className="hover:text-[#2f57ef]">
+            Login
+          </Link>
         </div>
 
         {/* Third Part */}

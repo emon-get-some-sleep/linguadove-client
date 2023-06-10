@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 const Classes = () => {
-    return (
-        <div>
+  return (
+    <div>
       <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center my-10">
-       Classes
+        Classes
       </h2>
       <div className="overflow-x-auto">
         <table className="table">
@@ -14,9 +14,7 @@ const Classes = () => {
               <th class="bg-[#2f57ef] text-white font-bold">Class Name</th>
               <th class="bg-[#2f57ef] text-white font-bold">Image</th>
               <th class="bg-[#2f57ef] text-white font-bold">Instructor name</th>
-              <th class="bg-[#2f57ef] text-white font-bold">
-              Available seats
-              </th>
+              <th class="bg-[#2f57ef] text-white font-bold">Available seats</th>
               <th class="bg-[#2f57ef] text-white font-bold">Price</th>
               <th class="bg-[#2f57ef] text-white font-bold">User</th>
             </tr>
@@ -41,23 +39,19 @@ const Classes = () => {
                 </div>
               </td>
               <td>Rebecca Hill</td>
+              <td>20</td>
+              <td>$ 300</td>
               <td>
-               20
-              </td>
-              <td>
-              $ 300
-              </td>
-              <td>
-              <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-             Enroll Now
-          </button>
+                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                  Enroll Now
+                </button>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-    );
+  );
 };
 
 export default Classes;
