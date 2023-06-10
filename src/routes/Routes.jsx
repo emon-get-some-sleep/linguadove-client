@@ -9,6 +9,9 @@ import Dashboard from "../shared/Dashboard/Dashboard";
 import SelectedClass from "../components/SelectedClass/SelectedClass";
 import EnrolledClasses from "../components/EnrolledClasses/EnrolledClasses";
 import AddClass from "../components/AddClass/AddClass";
+import MyClasses from "../components/MyClasses/MyClasses";
+import ManageClasses from "../components/ManageClasses/ManageClasses";
+import ManageUsers from "../components/ManageUsers/ManageUsers";
 
   const router = createBrowserRouter([
     {
@@ -26,7 +29,8 @@ import AddClass from "../components/AddClass/AddClass";
         {
           path: 'classes',
           element: <Classes></Classes>
-        }
+        },
+        
       ]
     },
     {
@@ -44,6 +48,18 @@ import AddClass from "../components/AddClass/AddClass";
         {
           path: 'addaclass',
           element: <AddClass></AddClass>
+        },
+        {
+          path: 'myclasses',
+          element: <MyClasses></MyClasses>
+        },
+        {
+          path: 'manageclasses',
+          element: <ManageClasses></ManageClasses>
+        },
+        {
+          path: 'manageusers',
+          element: <ManageUsers></ManageUsers>
         }
       ]
     }
