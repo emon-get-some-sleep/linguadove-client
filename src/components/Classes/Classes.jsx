@@ -11,12 +11,12 @@ const Classes = () => {
           {/* head */}
           <thead>
             <tr>
-              <th class="bg-[#2f57ef] text-white font-bold">Class Name</th>
-              <th class="bg-[#2f57ef] text-white font-bold">Image</th>
-              <th class="bg-[#2f57ef] text-white font-bold">Instructor name</th>
-              <th class="bg-[#2f57ef] text-white font-bold">Available seats</th>
-              <th class="bg-[#2f57ef] text-white font-bold">Price</th>
-              <th class="bg-[#2f57ef] text-white font-bold">User</th>
+              <th className="bg-[#2f57ef] text-white font-bold">Class Name</th>
+              <th className="bg-[#2f57ef] text-white font-bold">Image</th>
+              <th className="bg-[#2f57ef] text-white font-bold">Instructor name</th>
+              <th className="bg-[#2f57ef] text-white font-bold">Available seats</th>
+              <th className="bg-[#2f57ef] text-white font-bold">Price</th>
+              <th className="bg-[#2f57ef] text-white font-bold">User</th>
             </tr>
           </thead>
 

@@ -11,13 +11,13 @@ const MyClasses = () => {
             {/* head */}
             <thead>
               <tr>
-                <th class="bg-[#2f57ef] text-white font-bold">Class Name</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Image</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Instructor name</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Total Enrolled Students</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Status</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Update</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Feedback</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Class Name</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Image</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Instructor name</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Total Enrolled Students</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Status</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Update</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Feedback</th>
               </tr>
             </thead>
   

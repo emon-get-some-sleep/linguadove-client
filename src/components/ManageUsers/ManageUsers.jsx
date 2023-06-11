@@ -11,11 +11,11 @@ const ManageUsers = () => {
             {/* head */}
             <thead>
               <tr>
-                <th class="bg-[#2f57ef] text-white font-bold">User Email</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Image</th>
-                <th class="bg-[#2f57ef] text-white font-bold">User name</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Make Instructor</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Make Admin</th>
+                <th className="bg-[#2f57ef] text-white font-bold">User Email</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Image</th>
+                <th className="bg-[#2f57ef] text-white font-bold">User name</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Make Instructor</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Make Admin</th>
                
               </tr>
             </thead>

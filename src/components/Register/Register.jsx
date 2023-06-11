@@ -24,7 +24,7 @@ const Register = () => {
     }
   };
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex mt-[100px] items-center justify-center h-screen">
       {/* Login Container */}
       <form
         onSubmit={handleSubmit(onSubmit)}

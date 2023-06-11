@@ -11,13 +11,13 @@ const ManageClasses = () => {
             {/* head */}
             <thead>
               <tr>
-                <th class="bg-[#2f57ef] text-white font-bold">Class Name</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Image</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Instructor name</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Available seats</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Approve</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Deny</th>
-                <th class="bg-[#2f57ef] text-white font-bold">Feedback</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Class Name</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Image</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Instructor name</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Available seats</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Approve</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Deny</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Feedback</th>
               </tr>
             </thead>
   
