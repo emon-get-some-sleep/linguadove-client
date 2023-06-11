@@ -7,8 +7,12 @@ import {
   FaMapMarker,
   FaTwitter,
 } from "react-icons/fa";
+import PopularTeacher from "../../shared/PopularTeacher/PopularTeacher";
+import usePopularTeacher from "../../hooks/usePopularTeacher";
 
 const PopularInstructors = () => {
+  const [popularTeachers] = usePopularTeacher();
+  console.log(popularTeachers);
   return (
     <div className="mt-[100px]">
       <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center">
@@ -18,126 +22,10 @@ const PopularInstructors = () => {
         Below are some of our outstanding teachers
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-3 py-5">
-        <div className="bg-[#6A31C1] py-5 px-5 rounded-[30px]">
-          <div className="my-[40px]">
-            <h2 className="font-bold text-white text-2xl mb-5">
-              Elizabeth Lews
-            </h2>
-            <div className="flex flex-col md:flex-row items-center gap-5">
-              <div className="flex items-center gap-2">
-                <FaMapMarker className=" text-white" />
-                <p className="text-white">Newyourk, US</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <FaBirthdayCake className=" text-white" />
-                <p className="text-white">28 years</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <img
-              className="max-w-[300px] max-h-[250px] relative instructor-images ml-[100px] mt-[80px]"
-              src="https://bambino.bold-themes-cdn.com/demo-02/wp-content/uploads/sites/3/2019/02/team_01.jpg"
-              alt=""
-            />
-          </div>
-
-          <div className="flex flex-col md:flex-row-reverse justify-around items-center gap-5">
-            <button className="bg-[#FF9206] z-10 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded">
-              View More
-            </button>
-            <div className="flex items-center gap-[10px]">
-              <span className="w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#FF9206] text-white text-lg hover:bg-[#2f57ef] hover:text-white duration-300 z-10">
-                {" "}
-                <FaFacebookF />{" "}
-              </span>
-              <span className="w-[40px] h-[40px]  rounded-full flex items-center justify-center bg-[#FF9206] text-white text-lg hover:bg-[#2f57ef] hover:text-white duration-300 z-10">
-                {" "}
-                <FaTwitter />{" "}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="bg-[#6A31C1] py-5 px-5 rounded-[30px]">
-          <div className="my-[40px]">
-            <h2 className="font-bold text-white text-2xl mb-5">
-              Elizabeth Lews
-            </h2>
-            <div className="flex flex-col md:flex-row items-center gap-5">
-              <div className="flex items-center gap-2">
-                <FaMapMarker className=" text-white" />
-                <p className="text-white">Newyourk, US</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <FaBirthdayCake className=" text-white" />
-                <p className="text-white">28 years</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <img
-              className="max-w-[300px] max-h-[250px] relative instructor-images ml-[100px] mt-[80px]"
-              src="https://bambino.bold-themes-cdn.com/demo-02/wp-content/uploads/sites/3/2019/02/team_01.jpg"
-              alt=""
-            />
-          </div>
-
-          <div className="flex flex-col md:flex-row-reverse justify-around items-center gap-5">
-            <button className="bg-[#FF9206] z-10 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded">
-              View More
-            </button>
-            <div className="flex items-center gap-[10px]">
-              <span className="w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#FF9206] text-white text-lg hover:bg-[#2f57ef] hover:text-white duration-300 z-10">
-                {" "}
-                <FaFacebookF />{" "}
-              </span>
-              <span className="w-[40px] h-[40px]  rounded-full flex items-center justify-center bg-[#FF9206] text-white text-lg hover:bg-[#2f57ef] hover:text-white duration-300 z-10">
-                {" "}
-                <FaTwitter />{" "}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="bg-[#6A31C1] py-5 px-5 rounded-[30px]">
-          <div className="my-[40px]">
-            <h2 className="font-bold text-white text-2xl mb-5">
-              Elizabeth Lews
-            </h2>
-            <div className="flex flex-col md:flex-row items-center gap-5">
-              <div className="flex items-center gap-2">
-                <FaMapMarker className=" text-white" />
-                <p className="text-white">Newyourk, US</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <FaBirthdayCake className=" text-white" />
-                <p className="text-white">28 years</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <img
-              className="max-w-[300px] max-h-[250px] relative instructor-images ml-[100px] mt-[80px]"
-              src="https://bambino.bold-themes-cdn.com/demo-02/wp-content/uploads/sites/3/2019/02/team_01.jpg"
-              alt=""
-            />
-          </div>
-
-          <div className="flex flex-col md:flex-row-reverse justify-around items-center gap-5">
-            <button className="bg-[#FF9206] z-10 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded">
-              View More
-            </button>
-            <div className="flex items-center gap-[10px]">
-              <span className="w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#FF9206] text-white text-lg hover:bg-[#2f57ef] hover:text-white duration-300 z-10">
-                {" "}
-                <FaFacebookF />{" "}
-              </span>
-              <span className="w-[40px] h-[40px]  rounded-full flex items-center justify-center bg-[#FF9206] text-white text-lg hover:bg-[#2f57ef] hover:text-white duration-300 z-10">
-                {" "}
-                <FaTwitter />{" "}
-              </span>
-            </div>
-          </div>
-        </div>
+        
+      {
+        popularTeachers.map(teacherInfo => <PopularTeacher key={teacherInfo.name} teacherInfo={teacherInfo}></PopularTeacher>)
+      }
         
       </div>
     </div>
