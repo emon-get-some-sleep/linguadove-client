@@ -1,8 +1,12 @@
 import React from 'react';
+import useUsers from '../../hooks/useUsers';
+import SingleUser from '../../shared/SingleUser/SingleUser';
 
 const ManageUsers = () => {
+    const [allUsers, , refetch] = useUsers();
+
     return (
-        <div>
+        <div className=''>
         <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center mb-10">
          Manage Classes
         </h2>
@@ -12,8 +16,8 @@ const ManageUsers = () => {
             <thead>
               <tr>
                 <th className="bg-[#2f57ef] text-white font-bold">User Email</th>
-                <th className="bg-[#2f57ef] text-white font-bold">Image</th>
-                <th className="bg-[#2f57ef] text-white font-bold">User name</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Name</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Role</th>
                 <th className="bg-[#2f57ef] text-white font-bold">Make Instructor</th>
                 <th className="bg-[#2f57ef] text-white font-bold">Make Admin</th>
                
@@ -22,36 +26,9 @@ const ManageUsers = () => {
   
             <tbody>
               {/* row 1 */}
-              <tr>
-                <td>
-                  <p>English For Beginners</p>
-                </td>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="rounded-full w-12 h-12">
-                        <img
-                          src="https://bambino.bold-themes-cdn.com/demo-02/wp-content/uploads/sites/3/2019/02/team_01.jpg"
-                          alt="Avatar Tailwind CSS Component"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td>Rebecca Hill</td>
-                
-                <td>
-                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white font-bold py-2 px-4 rounded">
-                    Make Instructor
-                  </button>
-                </td>
-                <td>
-                  <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white font-bold py-2 px-4 rounded">
-                    Make Admin
-                  </button>
-                </td>
-                
-              </tr>
+           {
+            allUsers.map(userInfo => <SingleUser refetch={refetch} key={userInfo.email} userInfo={userInfo}></SingleUser>)
+           }
             </tbody>
           </table>
         </div>
