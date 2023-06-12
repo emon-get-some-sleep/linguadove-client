@@ -1,6 +1,49 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useContext } from 'react';
+import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../providers/AuthProviders';
 
+const img_hosting_token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
 const AddClass = () => {
+  const {user} = useContext(AuthContext);
+
+  const { register, handleSubmit, reset} = useForm();
+  const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
+    const onSubmit = data => {
+      console.log(data);
+       const formData = new FormData();
+       formData.append('image', data.image[0]);
+       fetch(img_hosting_url, {
+        method: 'POST',
+        body: formData
+       })
+       .then(res => res.json())
+       .then(imgResponse => {
+        if(imgResponse.success){
+          const imageURL = imgResponse.data.display_url;
+      //     // console.log(imgURL);
+          const {name,  price , instructor_email, instructor_name, number_of_lesson, available_seat
+} = data;
+          const newClass = {name, image: imageURL, price: parseFloat(price), instructor_email, instructor_name, number_of_lesson, available_seat: parseFloat(available_seat)};
+          console.log(newClass);
+          axios.post('http://localhost:5000/newclass', newClass)
+          .then(data => {
+            console.log('after  new class', data);
+            if(data.data.insertedId){
+              reset();
+              Swal.fire(
+                'Successfully added new class',
+                'Thank You',
+                'success'
+              )
+            }
+          })
+
+        }
+       })
+    };
+    
   return (
     <div className="flex flex-wrap min-h-screen  content-center justify-center  py-10">
       <div className="flex flex-col md:flex-row shadow-md">
@@ -9,10 +52,11 @@ const AddClass = () => {
             <h1 className="text-xl font-semibold">ADD A NEW CLASS</h1>
             {/* <small className="text-gray-400">Welcome back! Please enter your details</small> */}
 
-            <form className="mt-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
               <div className="mb-3">
                 <label className="mb-2 block text-xs font-semibold">Class Name</label>
                 <input
+                {...register("name", { required: true })}
                   type="text"
                   placeholder="Add Class Name"
                   className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
@@ -22,22 +66,30 @@ const AddClass = () => {
               <div className="mb-3">
                 <label className="mb-2 block text-xs font-semibold">Instructor Name</label>
                 <input
+                defaultValue={user?.displayName}
+                {...register("instructor_name", { required: true })}
+
                   type="text"
-                  placeholder="Instructor Name"
+                  placeholder={user?.displayName}
                   className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
+                  readOnly
                 />
               </div>
               <div className="mb-3">
                 <label className="mb-2 block text-xs font-semibold">Instructor Email</label>
                 <input
+                {...register("instructor_email", { required: true })}
                   type="text"
-                  placeholder="Instructor Email"
+                  defaultValue={user?.email}
+                  placeholder={user?.email}
                   className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
+                  readOnly
                 />
               </div>
               <div className="mb-3">
                 <label className="mb-2 block text-xs font-semibold">Available Seats</label>
                 <input
+                {...register("available_seat", { required: true })}
                   type="text"
                   placeholder="Available Seats"
                   className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
@@ -46,14 +98,24 @@ const AddClass = () => {
               <div className="mb-3">
                 <label className="mb-2 block text-xs font-semibold">Price</label>
                 <input
+                {...register("price", { required: true })}
                   type="text"
                   placeholder="Price"
                   className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
                 />
               </div>
               <div className="mb-3">
+                <label className="mb-2 block text-xs font-semibold">Number Of Lesson</label>
+                <input
+                {...register("number_of_lesson", { required: true })}
+                  type="text"
+                  placeholder="Number Of Lesson"
+                  className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
+                />
+              </div>
+              <div className="mb-3">
                 <label className="mb-2 block text-xs font-semibold">Upload Image</label>
-                <input type="file" className="file-input file-input-bordered w-full " />
+                <input  {...register("image", {required: true})} type="file" className="file-input file-input-bordered w-full " />
               </div>
 
               
