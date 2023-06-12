@@ -1,6 +1,10 @@
 import React from 'react';
+import useMyClasses from '../../hooks/useMyClasses';
+import SingleClasses from '../SingleClasses/SingleClasses';
 
 const MyClasses = () => {
+  const [myClasses] = useMyClasses();
+  console.log(myClasses);
     return (
         <div>
         <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center mb-10">
@@ -23,7 +27,7 @@ const MyClasses = () => {
   
             <tbody>
               {/* row 1 */}
-              <tr>
+              {/* <tr>
                 <td>
                   <p>English For Beginners</p>
                 </td>
@@ -50,7 +54,10 @@ const MyClasses = () => {
                 <td>
                   Good Decision
                 </td>
-              </tr>
+              </tr> */}
+              {
+                myClasses.map(rowData => <SingleClasses key={rowData._id} rowData={rowData}></SingleClasses>)
+              }
             </tbody>
           </table>
         </div>
