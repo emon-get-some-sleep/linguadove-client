@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "/dove.png";
 import { FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
 const Register = () => {
   const {
     register,
@@ -11,6 +12,27 @@ const Register = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const { createUser, updateUserProfile, googleSignIn } = useContext(AuthContext);
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+        .then(result => {
+            const loggedInUser = result.user;
+            console.log(loggedInUser);
+            const newUser = { name: loggedInUser.displayName, email: loggedInUser.email }
+            fetch('http://localhost:5000/users', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(newUser)
+            })
+                .then(res => res.json())
+                .then((data) => {
+                  console.log(data);
+                    // navigate(from, { replace: true });
+                })
+        })
+}
   const onSubmit = (data) => {
     // console.log(data);
     if(data.password !== data.confirmPassword){
@@ -22,9 +44,46 @@ const Register = () => {
           })
           return;
     }
+
+    createUser(data.email, data.password)
+    .then(result => {
+
+        const loggedUser = result.user;
+        console.log(loggedUser);
+
+        updateUserProfile(data.name, data.photoURL)
+            .then(() => {
+                const saveUser = { name: data.name, email: data.email }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.insertedId) {
+                            reset();
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'User created successfully.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            
+                        }
+                    })
+
+
+
+            })
+            .catch(error => console.log(error))
+    })
   };
   return (
-    <div className="flex mt-[100px] items-center justify-center h-screen">
+    <div className="flex mt-[100px] flex-col items-center justify-center h-screen">
       {/* Login Container */}
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -118,14 +177,14 @@ const Register = () => {
           <a href="#">Forgot password?</a>
           <Link to="/login">Login</Link>
         </div>
-        <div className="flex justify-center mt-5 text-sm">
+        {/* <div className="flex justify-center mt-5 text-sm">
           <p className="text-gray-400">or you can sign with</p>
         </div>
         <div className="mt-5 flex justify-center gap-3">
-          <button>
+          <button onClick={handleGoogleSignIn}>
             <FaGoogle />
           </button>
-        </div>
+        </div> */}
         <div className="mt-5 flex text-center text-sm text-gray-400">
           <p>
             This site is protected by reCAPTCHA and the Google <br />
@@ -140,6 +199,14 @@ const Register = () => {
           </p>
         </div>
       </form>
+      <div className="flex justify-center mt-5 text-sm">
+          <p className="text-gray-400">or you can sign with</p>
+        </div>
+        <div className="mt-5 flex justify-center gap-3">
+          <button onClick={handleGoogleSignIn}>
+            <FaGoogle />
+          </button>
+        </div>
     </div>
   );
 };

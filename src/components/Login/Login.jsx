@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "/dove.png";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
+
 
 const Login = () => {
+  const { signIn, googleSignIn } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -12,10 +16,41 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
+    signIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire(
+                  'Good job!',
+                  'You are successfully logged In!',
+                  'success'
+                );
+                // navigate(from, { replace: true });
+            })
   };
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+        .then(result => {
+            const loggedInUser = result.user;
+            console.log(loggedInUser);
+            const newUser = { name: loggedInUser.displayName, email: loggedInUser.email }
+            fetch('http://localhost:5000/users', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(newUser)
+            })
+                .then(res => res.json())
+                .then((data) => {
+                  console.log(data);
+                    // navigate(from, { replace: true });
+                })
+        })
+}
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen">
       {/* Login Container */}
       <form onSubmit={handleSubmit(onSubmit)} className="min-w-fit flex-col border bg-white px-6 py-14 shadow-md rounded-[4px] ">
         <div className="mb-8 flex justify-center">
@@ -60,14 +95,14 @@ const Login = () => {
           <a href="#">Forgot password?</a>
           <Link to="/register">Sign up</Link>
         </div>
-        <div className="flex justify-center mt-5 text-sm">
+        {/* <div className="flex justify-center mt-5 text-sm">
           <p className="text-gray-400">or you can sign with</p>
         </div>
         <div className="mt-5 flex justify-center gap-3">
           <button>
             <FaGoogle />
           </button>
-        </div>
+        </div> */}
         <div className="mt-5 flex text-center text-sm text-gray-400">
           <p>
             This site is protected by reCAPTCHA and the Google <br />
@@ -82,6 +117,14 @@ const Login = () => {
           </p>
         </div>
       </form>
+      <div className="flex justify-center mt-5 text-sm">
+          <p className="text-gray-400">or you can sign with</p>
+        </div>
+        <div className="mt-5 flex justify-center gap-3">
+          <button onClick={handleGoogleSignIn}>
+            <FaGoogle />
+          </button>
+        </div>
     </div>
   );
 };
