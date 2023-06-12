@@ -1,10 +1,12 @@
 import React from "react";
 import { FaBookOpen, FaGraduationCap, FaHome } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
+import NavigationMenu from "../../pages/NavigationMenu/NavigationMenu";
 
 const Dashboard = () => {
   return (
     <div>
+      <NavigationMenu></NavigationMenu>
      <div className='bg-gradient-to-br from-[#A4B4F8] to-[#D7AEF2] h-[10vh] flex items-center justify-center mb-4'>
         <h2 className="text-2xl text-center text-white font-bold">Dashboard</h2>
      </div>

@@ -1,14 +1,10 @@
 import React from 'react';
-import usePopularClasses from '../../hooks/usePopularClasses';
-import SingleClasses from '../SingleClasses/SingleClasses';
-import AdminSingleClasses from '../SingleClasses/AdminSingleClasses';
 
-const ManageClasses = () => {
-  const [popularClasses] = usePopularClasses();
+const SelectedClass = () => {
     return (
         <div>
         <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center mb-10">
-         Manage Classes
+         Selected Classes
         </h2>
         <div className="overflow-x-auto">
           <table className="table">
@@ -20,16 +16,14 @@ const ManageClasses = () => {
                 <th className="bg-[#2f57ef] text-white font-bold">Instructor name</th>
                 <th className="bg-[#2f57ef] text-white font-bold">Available seats</th>
                 <th className="bg-[#2f57ef] text-white font-bold">Price</th>
-                <th className="bg-[#2f57ef] text-white font-bold">Status</th>
-                <th className="bg-[#2f57ef] text-white font-bold">Approve</th>
-                <th className="bg-[#2f57ef] text-white font-bold">Deny</th>
-                <th className="bg-[#2f57ef] text-white font-bold">Feedback</th>
+                <th className="bg-[#2f57ef] text-white font-bold">PAY</th>
+                <th className="bg-[#2f57ef] text-white font-bold">DELETE</th>
               </tr>
             </thead>
   
             <tbody>
               {/* row 1 */}
-              {/* <tr>
+              <tr>
                 <td>
                   <p>English For Beginners</p>
                 </td>
@@ -47,25 +41,18 @@ const ManageClasses = () => {
                 </td>
                 <td>Rebecca Hill</td>
                 <td>20</td>
-                <td>
-                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white font-bold py-2 px-4 rounded">
-                    Approve
-                  </button>
-                </td>
+                <td>$ 300</td>
                 <td>
                   <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white font-bold py-2 px-4 rounded">
-                    Deny
+                    PAY NOW
                   </button>
                 </td>
                 <td>
-                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white font-bold py-2 px-4 rounded">
-                    Feedback
+                  <button className="bg-[#DC143C] hover:bg-red-500 text-white font-bold py-2 px-4 rounded">
+                    DELETE CLASS
                   </button>
                 </td>
-              </tr> */}
-              {
-              popularClasses.map(rowData => <AdminSingleClasses key={rowData.name} rowData={rowData}></AdminSingleClasses>)
-            }
+              </tr>
             </tbody>
           </table>
         </div>
@@ -73,4 +60,4 @@ const ManageClasses = () => {
     );
 };
 
-export default ManageClasses;
+export default SelectedClass;
