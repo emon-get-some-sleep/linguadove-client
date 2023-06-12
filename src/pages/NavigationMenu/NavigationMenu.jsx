@@ -1,15 +1,30 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '/dove.png'
 import './NavigationMenu.css';
 import { FaBars, FaBeer, FaTimes } from 'react-icons/fa';
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const NavigationMenu = () => {
   const [isDivVisible, setIsDivVisible] = useState(false);
+  const {user, logOut} = useContext(AuthContext);
+  // console.log(user?.photoURL);
 
   const handleButtonClick = () => {
     setIsDivVisible(!isDivVisible);
   };
+  const LogOut = () => {
+    logOut()
+        .then(() => {
+          Swal.fire(
+            'Successfully Logged Out',
+            'Please Come back!',
+            'success'
+          )
+         })
+        .catch(error => console.log(error));
+}
   return (
     <div className="pt-[60px] p-3 md:p-2">
       <nav className="flex items-center justify-between p-4 bg-white text-[#192335] rounded-lg shadow-lg">
@@ -42,10 +57,25 @@ const NavigationMenu = () => {
         </div>
 
         {/* Third Part */}
-        <div>
+        <div className="flex items-center gap-3">
+          {user 
+          ?
+          <>
+          <button onClick={LogOut} className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded hidden md:block">
+            Log Out
+          </button>
+          <div className="tooltip" data-tip={user?.displayName}>
+          <img src={user?.photoURL} className="w-[30px] h-[30px] rounded-[50%]" alt="" />
+        </div>
+        </>
+          :
+          <>
           <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded hidden md:block">
             Login
           </button>
+          </>
+          
+          }
         </div>
         <button className="md:hidden" onClick={handleButtonClick}>
         {isDivVisible ? <FaTimes /> : <FaBars />}
