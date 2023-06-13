@@ -1,6 +1,10 @@
 import React from 'react';
+import useSelectedClass from '../../hooks/useSelectedClass';
+import SingleSelectClass from '../../shared/SingleSelectClass/SingleSelectClass';
 
 const SelectedClass = () => {
+  const [selectedClasses] = useSelectedClass();
+  console.log(selectedClasses);
     return (
         <div>
         <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center mb-10">
@@ -23,36 +27,10 @@ const SelectedClass = () => {
   
             <tbody>
               {/* row 1 */}
-              <tr>
-                <td>
-                  <p>English For Beginners</p>
-                </td>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="rounded-full w-12 h-12">
-                        <img
-                          src="https://bambino.bold-themes-cdn.com/demo-02/wp-content/uploads/sites/3/2019/02/team_01.jpg"
-                          alt="Avatar Tailwind CSS Component"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td>Rebecca Hill</td>
-                <td>20</td>
-                <td>$ 300</td>
-                <td>
-                  <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white font-bold py-2 px-4 rounded">
-                    PAY NOW
-                  </button>
-                </td>
-                <td>
-                  <button className="bg-[#DC143C] hover:bg-red-500 text-white font-bold py-2 px-4 rounded">
-                    DELETE CLASS
-                  </button>
-                </td>
-              </tr>
+
+              {
+                selectedClasses.map(rowData => <SingleSelectClass key={rowData._id} rowData={rowData}></SingleSelectClass>)
+              }
             </tbody>
           </table>
         </div>
