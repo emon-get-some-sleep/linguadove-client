@@ -48,12 +48,23 @@ const SingleUser = ({userInfo, refetch}) => {
         <td> {role ? role : 'student'}</td>
         
         <td>
-        <button onClick={() => makeInstructor(userInfo)} className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white font-bold py-2 px-4 rounded">
+        {/* <button
+          onClick={() => approveClass(rowData)}
+          disabled={status == "pending" ? false : true}
+          className={`text-white font-bold py-2 px-4 rounded ${
+            status == "pending"
+              ? "bg-gradient-to-r from-[#2f57ef] to-[#B260EC]"
+              : "bg-[#c9c9c9] text-[#666666]"
+          }`}
+        >
+          {status == "pending" ? "Approve" : "Approved"}
+        </button> */}
+        <button disabled={(role == 'admin' || role == 'instructor' ) ? true : false } onClick={() => makeInstructor(userInfo)} className={`${(role == 'admin' || role == 'instructor') ? "bg-[#c9c9c9] text-[#666666]" : "bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white" } font-bold py-2 px-4 rounded`}>
             Make Instructor
           </button>
         </td>
         <td>
-          <button onClick={() => makeAdmin(userInfo)} className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white font-bold py-2 px-4 rounded">
+          <button disabled={(role == 'admin' || role == 'instructor' ) ? true : false } onClick={() => makeAdmin(userInfo)} className={`${(role == 'admin' || role == 'instructor') ? "bg-[#c9c9c9] text-[#666666]" : "bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white" } font-bold py-2 px-4 rounded`}>
             Make Admin
           </button>
         </td>

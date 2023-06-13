@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import usePopularClasses from '../../hooks/usePopularClasses';
 import SingleClasses from '../SingleClasses/SingleClasses';
 import AdminSingleClasses from '../SingleClasses/AdminSingleClasses';
 
 const ManageClasses = () => {
   const [popularClasses, , refetch] = usePopularClasses();
+  const [currentId, setCurrentId] = useState();
     return (
         <div>
         <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center mb-10">
@@ -64,7 +65,7 @@ const ManageClasses = () => {
                 </td>
               </tr> */}
               {
-              popularClasses.map(rowData => <AdminSingleClasses refetch={refetch} key={rowData.name} rowData={rowData}></AdminSingleClasses>)
+              popularClasses.map(rowData => <AdminSingleClasses currentId={currentId} setCurrentId={setCurrentId} refetch={refetch} key={rowData.name} rowData={rowData}></AdminSingleClasses>)
             }
             </tbody>
           </table>

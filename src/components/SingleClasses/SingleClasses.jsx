@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 const SingleClasses = ({rowData}) => {
     const navigate = useNavigate();
-    const {_id, name, instructor_name, image, available_seat, price, number_of_lesson, status, enrolled} = rowData;
+    const {_id, name, instructor_name, image, available_seat, price, number_of_lesson, status, feedback, enrolled} = rowData;
+    // console.log(feedback);
     const {user} = useContext(AuthContext);
     const handleSelectedClass = newClass => {
       // console.log(item);
@@ -67,7 +68,7 @@ const SingleClasses = ({rowData}) => {
               <td>{instructor_name}</td>
               <td>{enrolled ? enrolled : 0}</td>
               <td>{available_seat}</td>
-              <td>$ {price}</td>
+              <td>{status ? status : 'approved'}</td>
               <td>
                 
                   <button onClick={() => handleSelectedClass(rowData)} className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -75,6 +76,9 @@ const SingleClasses = ({rowData}) => {
                 </button>
                 
                 
+              </td>
+              <td>
+                {feedback ? feedback : '...'}
               </td>
             </tr>
     );
