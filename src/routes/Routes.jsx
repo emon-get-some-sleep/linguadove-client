@@ -17,6 +17,7 @@ import Register from "../components/Register/Register";
 import Payment from "../shared/Payment/Payment";
 import PaymentHistory from "../components/PaymentHistory/PaymentHistory";
 import PrivateRoutes from "./PrivateRoutes";
+import UpdateClass from "../components/SingleClasses/UpdateClass";
 
   const router = createBrowserRouter([
     {
@@ -62,6 +63,11 @@ import PrivateRoutes from "./PrivateRoutes";
           path: 'payment/:id',
           element: <Payment></Payment>,
           loader: ({params}) => fetch(`http://localhost:5000/paymentinfo/${params.id}`)
+        },
+        {
+          path: 'updateclass/:id',
+          element: <UpdateClass></UpdateClass>,
+          loader: ({params}) => fetch(`http://localhost:5000/classinfo/${params.id}`)
         },
         {
           path: 'addaclass',

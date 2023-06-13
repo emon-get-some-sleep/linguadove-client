@@ -1,6 +1,5 @@
 import React from "react";
 import usePopularClasses from "../../hooks/usePopularClasses";
-import SingleClasses from "../SingleClasses/SingleClasses";
 import GeneralSingleClass from "../SingleClasses/GeneralSingleClass";
 
 const Classes = () => {

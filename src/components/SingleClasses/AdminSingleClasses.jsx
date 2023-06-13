@@ -77,7 +77,7 @@ const AdminSingleClasses = ({ rowData, refetch, currentId, setCurrentId }) => {
       <td>{instructor_name}</td>
       <td>{available_seat}</td>
       <td>$ {price}</td>
-      <td className={`${status ? "" : "text-green-500 font-medium"}`}>
+      <td className={`${status != 'denied' ? "text-green-500 font-medium" : "text-red-400 font-medium"}`}>
         {" "}
         {status ? status : "approved"}
       </td>

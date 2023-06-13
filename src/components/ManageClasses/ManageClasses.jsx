@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import usePopularClasses from '../../hooks/usePopularClasses';
-import SingleClasses from '../SingleClasses/SingleClasses';
+
 import AdminSingleClasses from '../SingleClasses/AdminSingleClasses';
 
 const ManageClasses = () => {
