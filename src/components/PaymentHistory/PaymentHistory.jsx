@@ -7,10 +7,11 @@ const PaymentHistory = () => {
     const compareDates = (paymentA, paymentB) => {
         const date1 = new Date(paymentA.date);
         const date2 = new Date(paymentB.date);
-        return date1 - date2;
+        return date2 - date1;
       };
       const sortedPaymentHistory = enrolledClasses.sort(compareDates);
       console.log(sortedPaymentHistory);
+      console.log(enrolledClasses)
     return (
         <div className=''>
         <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center mb-10">
