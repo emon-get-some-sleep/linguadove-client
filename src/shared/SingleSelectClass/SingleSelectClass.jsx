@@ -1,7 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SingleSelectClass = ({rowData}) => {
-    const {_id, name, instructor_name, image, available_seat, price, status} = rowData;
+    const {selectedClassId, _id, name, instructor_name, image, available_seat, price, status} = rowData;
+    const navigate = useNavigate();
+    const goToPayment = (selectedClass) => {
+        const url = `/dashboard/payment/${selectedClass.selectedClassId}`;
+        navigate(url);
+    }
     return (
         <tr>
                 <td>
@@ -23,7 +29,7 @@ const SingleSelectClass = ({rowData}) => {
                 <td>{available_seat}</td>
                 <td>$ {price}</td>
                 <td>
-                  <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white font-bold py-2 px-4 rounded">
+                  <button onClick={() => goToPayment(rowData)} className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] text-white font-bold py-2 px-4 rounded">
                     PAY NOW
                   </button>
                 </td>

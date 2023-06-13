@@ -14,6 +14,7 @@ import ManageClasses from "../components/ManageClasses/ManageClasses";
 import ManageUsers from "../components/ManageUsers/ManageUsers";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import Payment from "../shared/Payment/Payment";
 
   const router = createBrowserRouter([
     {
@@ -54,6 +55,11 @@ import Register from "../components/Register/Register";
         {
           path: 'enrolledclasses',
           element: <EnrolledClasses></EnrolledClasses>
+        },
+        {
+          path: 'payment/:id',
+          element: <Payment></Payment>,
+          loader: ({params}) => fetch(`http://localhost:5000/paymentinfo/${params.id}`)
         },
         {
           path: 'addaclass',

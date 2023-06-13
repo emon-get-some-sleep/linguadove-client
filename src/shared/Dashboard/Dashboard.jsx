@@ -23,7 +23,7 @@ const Dashboard = () => {
         </div>
         
     </div>
-    <div className="">
+    <div className="w-[90%] mx-auto">
             <Outlet></Outlet>
     </div>
     </div>
