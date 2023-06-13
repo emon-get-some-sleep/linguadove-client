@@ -20,6 +20,7 @@ const Dashboard = () => {
             <Link to="/dashboard/myclasses" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>My Classes</span></Link>
             <Link to="/dashboard/manageclasses" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>Manage Classes</span></Link>
             <Link to="/dashboard/manageusers" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>Manage Users</span></Link>
+            <Link to="/dashboard/history" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>Payment History</span></Link>
         </div>
         
     </div>

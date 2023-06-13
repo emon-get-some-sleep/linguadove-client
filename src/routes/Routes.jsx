@@ -15,6 +15,7 @@ import ManageUsers from "../components/ManageUsers/ManageUsers";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Payment from "../shared/Payment/Payment";
+import PaymentHistory from "../components/PaymentHistory/PaymentHistory";
 
   const router = createBrowserRouter([
     {
@@ -76,6 +77,10 @@ import Payment from "../shared/Payment/Payment";
         {
           path: 'manageusers',
           element: <ManageUsers></ManageUsers>
+        },
+        {
+          path: 'history',
+          element: <PaymentHistory></PaymentHistory>
         }
       ]
     }

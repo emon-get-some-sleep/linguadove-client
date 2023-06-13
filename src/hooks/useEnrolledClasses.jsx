@@ -3,9 +3,10 @@ import { useQuery } from 'react-query';
 import { AuthContext } from '../providers/AuthProviders';
 
 const useEnrolledClasses = () => {
-    const {user} = useContext(AuthContext);
-    const {data: enrolledClasses = [], isLoading: loading, refetch} = useQuery({
+    const {user, loading} = useContext(AuthContext);
+    const {data: enrolledClasses = [], isLoading: isEnrollClassesloading, refetch} = useQuery({
         queryKey: ['enrolled_classes'],
+        enabled: !loading,
         queryFn: async() => {
             const res = await fetch(`http://localhost:5000/enrolledclasses/${user?.email}`);
             return res.json();
