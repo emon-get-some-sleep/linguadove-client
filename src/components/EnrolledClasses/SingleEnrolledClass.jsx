@@ -26,9 +26,9 @@ const SingleEnrolledClass = ({classInfo}) => {
                             <p className='font-medium'>Available Seats {available_seat}</p>
                         </div>
                     </div>
-                    <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded">
+                    {/* <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded">
                   Select
-                </button>
+                </button> */}
                 </div>
     );
 };

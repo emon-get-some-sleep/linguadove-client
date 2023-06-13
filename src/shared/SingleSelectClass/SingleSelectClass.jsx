@@ -1,12 +1,30 @@
+import axios from 'axios';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-const SingleSelectClass = ({rowData}) => {
+const SingleSelectClass = ({rowData, refetch}) => {
     const {selectedClassId, _id, name, instructor_name, image, available_seat, price, status} = rowData;
     const navigate = useNavigate();
     const goToPayment = (selectedClass) => {
         const url = `/dashboard/payment/${selectedClass.selectedClassId}`;
         navigate(url);
+    }
+    const handleDelete = (selectedClass) => {
+        
+        axios.delete(`http://localhost:5000/selectclass/${selectedClass.selectedClassId}`)
+        .then(data => {
+          console.log(data);
+          if(data.data.deletedCount > 0){
+            refetch();
+            Swal.fire(
+              'Deleted!',
+              'The Class Has Been Removed From The List',
+              'success'
+            )
+          }
+        })
+        
     }
     return (
         <tr>
@@ -34,7 +52,7 @@ const SingleSelectClass = ({rowData}) => {
                   </button>
                 </td>
                 <td>
-                  <button className="bg-[#DC143C] hover:bg-red-500 text-white font-bold py-2 px-4 rounded">
+                  <button onClick={() => handleDelete(rowData)} className="bg-[#DC143C] hover:bg-red-500 text-white font-bold py-2 px-4 rounded">
                     DELETE CLASS
                   </button>
                 </td>

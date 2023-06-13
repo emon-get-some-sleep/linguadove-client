@@ -3,7 +3,7 @@ import useSelectedClass from '../../hooks/useSelectedClass';
 import SingleSelectClass from '../../shared/SingleSelectClass/SingleSelectClass';
 
 const SelectedClass = () => {
-  const [selectedClasses] = useSelectedClass();
+  const [selectedClasses, , refetch] = useSelectedClass();
   console.log(selectedClasses);
     return (
         <div>
@@ -29,7 +29,7 @@ const SelectedClass = () => {
               {/* row 1 */}
 
               {
-                selectedClasses.map(rowData => <SingleSelectClass key={rowData._id} rowData={rowData}></SingleSelectClass>)
+                selectedClasses.map(rowData => <SingleSelectClass refetch={refetch} key={rowData._id} rowData={rowData}></SingleSelectClass>)
               }
             </tbody>
           </table>
