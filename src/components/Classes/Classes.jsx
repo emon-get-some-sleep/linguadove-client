@@ -4,6 +4,16 @@ import SingleClasses from "../SingleClasses/SingleClasses";
 
 const Classes = () => {
   const [popularClasses] = usePopularClasses();
+  const validClasses = popularClasses.filter(eachClass => {
+    // if(eachClass.status !== 'pending' || eachClass.status !== 'denied'){
+    //   return eachClass;
+    // }
+    if(eachClass.status == 'pending' || eachClass.status === 'denied'){
+      return 0;
+    }
+    return eachClass;
+  });
+  // console.log(validClasses);
   return (
     <div>
       <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center my-10">
@@ -26,7 +36,7 @@ const Classes = () => {
           <tbody>
            
             {
-              popularClasses.map(rowData => <SingleClasses key={rowData.name} rowData={rowData}></SingleClasses>)
+              validClasses.map(rowData => <SingleClasses key={rowData.name} rowData={rowData}></SingleClasses>)
             }
           </tbody>
         </table>
