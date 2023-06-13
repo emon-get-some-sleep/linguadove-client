@@ -77,15 +77,23 @@ const CheckoutForm = ({ classData }) => {
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
             // save payment information to the server
+            const availableSeat = classData.available_seat == 0 ? 0 : classData.available_seat - 1;
             const payment = {
+
                 email: user?.email,
                 transactionId: paymentIntent.id,
                 price: classData.price,
                 date: new Date(),
                 name: classData.name,
-                
-                
-                
+                classId: classData.selectedClassId,
+                deleteId: classData._id,
+                image: classData.image,
+                instructor_name: classData.instructor_name,
+                available_seat: availableSeat,
+                number_of_lesson: classData.number_of_lesson
+
+
+
                 
             }
             axios.post('http://localhost:5000/payments', payment)
@@ -112,6 +120,7 @@ const CheckoutForm = ({ classData }) => {
                                 '::placeholder': {
                                     color: '#aab7c4',
                                 },
+                        
                             },
                             invalid: {
                                 color: '#9e2146',
@@ -119,12 +128,13 @@ const CheckoutForm = ({ classData }) => {
                         },
                     }}
                 />
-                <button className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe || !studentSecret || processing}>
+                <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5 w-full" type="submit" disabled={!stripe || !studentSecret || processing}>
                     Pay
                 </button>
             </form>
             {cardError && <p className="text-red-600 ml-8">{cardError}</p>}
-            {transactionId && <p className="text-green-500">Transaction complete with transactionId: {transactionId}</p>}
+            {transactionId && 
+            <p className="text-green-500">Transaction Successful with transactionId: {transactionId}</p>}
         </>
     );
 };

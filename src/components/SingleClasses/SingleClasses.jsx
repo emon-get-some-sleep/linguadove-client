@@ -5,12 +5,12 @@ import { useNavigate } from 'react-router-dom';
 
 const SingleClasses = ({rowData}) => {
     const navigate = useNavigate();
-    const {_id, name, instructor_name, image, available_seat, price, status} = rowData;
+    const {_id, name, instructor_name, image, available_seat, price, number_of_lesson, status} = rowData;
     const {user} = useContext(AuthContext);
     const handleSelectedClass = newClass => {
       // console.log(item);
       if(user && user.email){
-        const selectedClass = {selectedClassId: _id, name, instructor_name, image, available_seat, price, status, email:user?.email};
+        const selectedClass = {selectedClassId: _id, name, number_of_lesson, instructor_name, image, available_seat, price, status, email:user?.email};
   
         fetch('http://localhost:5000/selectclass', {
           method: 'POST',
