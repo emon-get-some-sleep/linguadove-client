@@ -2,8 +2,14 @@ import React from "react";
 import { FaBookOpen, FaGraduationCap, FaHome } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 import NavigationMenu from "../../pages/NavigationMenu/NavigationMenu";
+import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
 
 const Dashboard = () => {
+  const [isAdmin] = useAdmin();
+  
+  const [isInstructor] = useInstructor();
+  console.log(isInstructor);
   return (
     <div>
       <NavigationMenu></NavigationMenu>
@@ -13,14 +19,41 @@ const Dashboard = () => {
     <div className="flex gap-5">
     <div className="w-[250px] h-[100vh] bg-white p-3 md:p-2 left-0 border-2 rounded-lg hidden md:block">
         <div className="text-[#2F57EF] space-y-5">
-            <Link to="/dashboard" className="flex items-center gap-2 cursor-pointer font-medium border-b-2 my-3"> <FaHome /> <span>Dashboard</span></Link>
-            <Link to="/dashboard/selectedclass" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaGraduationCap /> <span>My Selected Class</span></Link>
-            <Link to="/dashboard/enrolledclasses" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>My Enrolled Class</span></Link>
-            <Link to="/dashboard/addaclass" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>Add a Class</span></Link>
+            
+            
+            
+            {
+              isInstructor
+              &&
+              <>
+              <Link to="/dashboard/addaclass" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>Add a Class</span></Link>
             <Link to="/dashboard/myclasses" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>My Classes</span></Link>
-            <Link to="/dashboard/manageclasses" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>Manage Classes</span></Link>
-            <Link to="/dashboard/manageusers" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>Manage Users</span></Link>
-            <Link to="/dashboard/history" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>Payment History</span></Link>
+              </>
+      
+
+            }
+            {
+              isAdmin
+              &&
+              <>
+               <Link to="/dashboard/manageclasses" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>Manage Classes</span></Link>
+              <Link to="/dashboard/manageusers" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>Manage Users</span></Link>
+              </>
+              
+            }
+            {
+              isAdmin == false && isInstructor == false 
+              ?
+              <>
+              <Link to="/dashboard" className="flex items-center gap-2 cursor-pointer font-medium border-b-2 my-3"> <FaHome /> <span>Dashboard</span></Link>
+              <Link to="/dashboard/selectedclass" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaGraduationCap /> <span>My Selected Class</span></Link>
+              <Link to="/dashboard/enrolledclasses" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>My Enrolled Class</span></Link>
+              <Link to="/dashboard/history" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>Payment History</span></Link>
+              </>
+              :
+              <>
+              </>
+            }
         </div>
         
     </div>

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import logo from "/dove.png";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
@@ -15,6 +15,10 @@ const Login = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
+
+  const from = location?.state?.from?.pathname || '/';
+  console.log(from)
   const onSubmit = (data) => {
     // console.log(data);
     signIn(data.email, data.password)
@@ -26,7 +30,7 @@ const Login = () => {
                   'You are successfully logged In!',
                   'success'
                 );
-                // navigate(from, { replace: true });
+                navigate(from, { replace: true });
             })
   };
   const handleGoogleSignIn = () => {
@@ -45,7 +49,7 @@ const Login = () => {
                 .then(res => res.json())
                 .then((data) => {
                   console.log(data);
-                    // navigate(from, { replace: true });
+                    navigate(from, { replace: true });
                 })
         })
 }

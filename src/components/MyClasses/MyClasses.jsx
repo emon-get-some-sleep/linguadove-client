@@ -19,6 +19,7 @@ const MyClasses = () => {
                 <th className="bg-[#2f57ef] text-white font-bold">Image</th>
                 <th className="bg-[#2f57ef] text-white font-bold">Instructor name</th>
                 <th className="bg-[#2f57ef] text-white font-bold">Total Enrolled Students</th>
+                <th className="bg-[#2f57ef] text-white font-bold">Available Seats</th>
                 <th className="bg-[#2f57ef] text-white font-bold">Status</th>
                 <th className="bg-[#2f57ef] text-white font-bold">Update</th>
                 <th className="bg-[#2f57ef] text-white font-bold">Feedback</th>

@@ -16,6 +16,7 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Payment from "../shared/Payment/Payment";
 import PaymentHistory from "../components/PaymentHistory/PaymentHistory";
+import PrivateRoutes from "./PrivateRoutes";
 
   const router = createBrowserRouter([
     {
@@ -32,7 +33,7 @@ import PaymentHistory from "../components/PaymentHistory/PaymentHistory";
         },
         {
           path: 'classes',
-          element: <Classes></Classes>
+          element: <PrivateRoutes><Classes></Classes></PrivateRoutes>
         },
         {
           path: 'login',
@@ -47,7 +48,7 @@ import PaymentHistory from "../components/PaymentHistory/PaymentHistory";
     },
     {
       path: 'dashboard',
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoutes> <Dashboard></Dashboard></PrivateRoutes>,
       children: [
         {
           path: 'selectedclass',

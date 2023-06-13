@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const SingleClasses = ({rowData}) => {
     const navigate = useNavigate();
-    const {_id, name, instructor_name, image, available_seat, price, number_of_lesson, status} = rowData;
+    const {_id, name, instructor_name, image, available_seat, price, number_of_lesson, status, enrolled} = rowData;
     const {user} = useContext(AuthContext);
     const handleSelectedClass = newClass => {
       // console.log(item);
@@ -65,6 +65,7 @@ const SingleClasses = ({rowData}) => {
                 </div>
               </td>
               <td>{instructor_name}</td>
+              <td>{enrolled ? enrolled : 0}</td>
               <td>{available_seat}</td>
               <td>$ {price}</td>
               <td>
