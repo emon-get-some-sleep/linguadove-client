@@ -2,8 +2,12 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProviders';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import useInstructor from '../../hooks/useInstructor';
+import useAdmin from '../../hooks/useAdmin';
 
-const SingleClasses = ({rowData}) => {
+const GeneralSingleClass = ({rowData}) => {
+    const [isInstructor] = useInstructor();
+    const [isAdmin] = useAdmin();
     const navigate = useNavigate();
     const {_id, name, instructor_name, image, available_seat, price, number_of_lesson, status, enrolled} = rowData;
     const {user} = useContext(AuthContext);
@@ -65,14 +69,23 @@ const SingleClasses = ({rowData}) => {
                 </div>
               </td>
               <td>{instructor_name}</td>
-              <td>{enrolled ? enrolled : 0}</td>
               <td>{available_seat}</td>
               <td>$ {price}</td>
+              <td>{enrolled ? enrolled : 0}</td>
+              
+              
               <td>
                 
-                  <button onClick={() => handleSelectedClass(rowData)} className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                  Update
+                  {/* <button onClick={() => handleSelectedClass(rowData)} className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                  Select
+                </button> */}
+
+                <button onClick={() => handleSelectedClass(rowData)} disabled={(isInstructor || isAdmin) ? true : false} className={ `text-white font-bold py-2 px-4 rounded ${(isInstructor || isAdmin)? 'bg-[#c9c9c9] text-[#666666]' : 'bg-gradient-to-r from-[#2f57ef] to-[#B260EC]' }`}>
+                    Select
                 </button>
+                
+                
+              
                 
                 
               </td>
@@ -80,4 +93,4 @@ const SingleClasses = ({rowData}) => {
     );
 };
 
-export default SingleClasses;
+export default GeneralSingleClass;

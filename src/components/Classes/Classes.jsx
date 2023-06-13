@@ -1,6 +1,7 @@
 import React from "react";
 import usePopularClasses from "../../hooks/usePopularClasses";
 import SingleClasses from "../SingleClasses/SingleClasses";
+import GeneralSingleClass from "../SingleClasses/GeneralSingleClass";
 
 const Classes = () => {
   const [popularClasses] = usePopularClasses();
@@ -29,6 +30,7 @@ const Classes = () => {
               <th className="bg-[#2f57ef] text-white font-bold">Instructor name</th>
               <th className="bg-[#2f57ef] text-white font-bold">Available seats</th>
               <th className="bg-[#2f57ef] text-white font-bold">Price</th>
+              <th className="bg-[#2f57ef] text-white font-bold">Enrolled</th>
               <th className="bg-[#2f57ef] text-white font-bold">User</th>
             </tr>
           </thead>
@@ -36,7 +38,7 @@ const Classes = () => {
           <tbody>
            
             {
-              validClasses.map(rowData => <SingleClasses key={rowData.name} rowData={rowData}></SingleClasses>)
+              validClasses.map(rowData => <GeneralSingleClass key={rowData.name} rowData={rowData}></GeneralSingleClass>)
             }
           </tbody>
         </table>

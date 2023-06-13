@@ -47,7 +47,7 @@ const AddClass = () => {
   return (
     <div className="flex flex-wrap min-h-screen  content-center justify-center  py-10">
       <div className="flex flex-col md:flex-row shadow-md">
-        <div className="flex flex-wrap content-center justify-center rounded-l-md bg-white" style={{ width: ' 24rem', height: '35rem' }}>
+        <div className="flex flex-wrap content-center justify-center rounded-l-md bg-white" style={{ width: ' 24rem', height: '37.5rem' }}>
           <div className="w-full md:w-72">
             <h1 className="text-xl font-semibold">ADD A NEW CLASS</h1>
             {/* <small className="text-gray-400">Welcome back! Please enter your details</small> */}
