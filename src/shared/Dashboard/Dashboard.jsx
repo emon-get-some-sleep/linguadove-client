@@ -10,6 +10,8 @@ const Dashboard = () => {
   
   const [isInstructor] = useInstructor();
   // console.log(isAdmin);
+  const isStudent = (!isAdmin && !isInstructor);
+  // console.log(isStudent);
   return (
     <div>
       <NavigationMenu></NavigationMenu>
@@ -43,13 +45,9 @@ const Dashboard = () => {
               
             }
             {
-             ( isAdmin == false && isInstructor == false )
-              ?
+             isStudent
+              &&
               <>
-              </>
-              :
-              <>
-              
               <Link to="/dashboard/selectedclass" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaGraduationCap /> <span>My Selected Class</span></Link>
               <Link to="/dashboard/enrolledclasses" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>My Enrolled Class</span></Link>
               <Link to="/dashboard/history" className=" flex items-center gap-2 font-medium border-b-2 my-3"> <FaBookOpen /> <span>Payment History</span></Link>

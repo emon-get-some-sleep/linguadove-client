@@ -43,7 +43,7 @@ const SingleClasses = ({rowData}) => {
                 
               </td>
               <td>
-                {feedback ? feedback : '...'}
+                {feedback && status == 'denied' ? feedback : '...'}
               </td>
         </tr>
       

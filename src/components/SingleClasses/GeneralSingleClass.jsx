@@ -55,7 +55,7 @@ const GeneralSingleClass = ({rowData}) => {
       }
     }
     return (
-        <tr>
+        <tr className={`${available_seat == 0 ? 'bg-red-600': ''}`}>
               <td>
                 <p>{name}</p>
               </td>
@@ -83,7 +83,7 @@ const GeneralSingleClass = ({rowData}) => {
                   Select
                 </button> */}
 
-                <button onClick={() => handleSelectedClass(rowData)} disabled={(isInstructor || isAdmin) ? true : false} className={ `text-white font-bold py-2 px-4 rounded ${(isInstructor || isAdmin)? 'bg-[#c9c9c9] text-[#666666]' : 'bg-gradient-to-r from-[#2f57ef] to-[#B260EC]' }`}>
+                <button onClick={() => handleSelectedClass(rowData)} disabled={(isInstructor || isAdmin || available_seat == 0) ? true : false} className={ `text-white font-bold py-2 px-4 rounded ${(isInstructor || isAdmin || available_seat == 0)? 'bg-[#c9c9c9] text-[#666666]' : 'bg-gradient-to-r from-[#2f57ef] to-[#B260EC]' }`}>
                     Select
                 </button>
                 

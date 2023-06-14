@@ -9,6 +9,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 
 const UpdateClass = () => {
   const classInfo = useLoaderData();
+  const token = localStorage.getItem('access-token');
   console.log(classInfo);
   const {user} = useContext(AuthContext);
 
@@ -23,7 +24,11 @@ const UpdateClass = () => {
           const newClass = {name,  price: parseFloat(price), number_of_lesson, available_seat: parseFloat(available_seat,)};
           newClass.status= classInfo.status
           console.log(newClass);
-          axios.patch(`http://localhost:5000/newclass/${classInfo._id}`, newClass)
+          axios.patch(`http://localhost:5000/newclass/${classInfo._id}`, newClass,  {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
           .then(data => {
             console.log('after  new class', data);
             if(data.data.modifiedCount > 0){

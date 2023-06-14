@@ -7,6 +7,7 @@ import axios from "axios";
 
 
 const CheckoutForm = ({ classData }) => {
+    const token = localStorage.getItem('access-token');
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -18,7 +19,11 @@ const CheckoutForm = ({ classData }) => {
     // console.log(price);
     useEffect(() => {
         if (classData.price > 0) {
-            axios.post('http://localhost:5000/create-payment-intent', { price })
+            axios.post('http://localhost:5000/create-payment-intent', { price }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                  },
+            })
                 .then(res => {
                     console.log(res.data.clientSecret)
                     setStudentSecret(res.data.clientSecret);

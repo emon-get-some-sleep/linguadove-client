@@ -6,6 +6,7 @@ const AdminSingleClasses = ({ rowData, refetch, currentId, setCurrentId }) => {
   const { _id, name, instructor_name, image, available_seat, price, status } =
     rowData;
   const [classId, setClassId] = useState();
+  const token = localStorage.getItem('access-token');
   const classIdRef = useRef(null);
   const updateId = whatClass => {
    setCurrentId(whatClass._id);
@@ -13,6 +14,9 @@ const AdminSingleClasses = ({ rowData, refetch, currentId, setCurrentId }) => {
   const approveClass = (whatClass) => {
     fetch(`http://localhost:5000/class/admin/approve/${whatClass._id}`, {
       method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
@@ -26,6 +30,9 @@ const AdminSingleClasses = ({ rowData, refetch, currentId, setCurrentId }) => {
   const denyClass = (whatClass) => {
     fetch(`http://localhost:5000/class/admin/deny/${whatClass._id}`, {
       method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
@@ -46,7 +53,11 @@ const AdminSingleClasses = ({ rowData, refetch, currentId, setCurrentId }) => {
     const feedback = feedbackRef.current.value;
     
     // console.log(feedback, currentId);
-    axios.patch(`http://localhost:5000/class/admin/feedback/${currentId}`, {feedback : feedback})
+    axios.patch(`http://localhost:5000/class/admin/feedback/${currentId}`, {feedback : feedback}, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
     .then(data => {
       if(data.data.modifiedCount){
         Swal.fire(

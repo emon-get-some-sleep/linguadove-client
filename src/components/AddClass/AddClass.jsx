@@ -11,6 +11,7 @@ const AddClass = () => {
 
   const { register, handleSubmit, reset} = useForm();
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
+  const token = localStorage.getItem('access-token');
     const onSubmit = data => {
       console.log(data);
        const formData = new FormData();
@@ -28,7 +29,11 @@ const AddClass = () => {
 } = data;
           const newClass = {name, image: imageURL, price: parseFloat(price), instructor_email, instructor_name, number_of_lesson, available_seat: parseFloat(available_seat)};
           console.log(newClass);
-          axios.post('http://localhost:5000/newclass', newClass)
+          axios.post('http://localhost:5000/newclass', newClass, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
           .then(data => {
             console.log('after  new class', data);
             if(data.data.insertedId){
