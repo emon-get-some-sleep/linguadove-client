@@ -12,6 +12,7 @@ const GeneralSingleClass = ({rowData}) => {
     const {_id, name, instructor_name, image, available_seat, price, number_of_lesson, status, enrolled} = rowData;
     const {user} = useContext(AuthContext);
     const handleSelectedClass = newClass => {
+     
       // console.log(item);
       if(user && user.email){
         const selectedClass = {selectedClassId: _id, name, number_of_lesson, instructor_name, image, available_seat, price, status, email:user?.email};
@@ -37,7 +38,7 @@ const GeneralSingleClass = ({rowData}) => {
       }
       else {
         Swal.fire({
-          title: 'Please login to order this food',
+          title: 'Please login to Select this class',
           
           icon: 'warning',
           showCancelButton: true,

@@ -34,7 +34,7 @@ import UpdateClass from "../components/SingleClasses/UpdateClass";
         },
         {
           path: 'classes',
-          element: <PrivateRoutes><Classes></Classes></PrivateRoutes>
+          element: <Classes></Classes>
         },
         {
           path: 'login',

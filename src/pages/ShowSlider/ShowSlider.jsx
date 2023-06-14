@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ShowSlider.css";
+import { Slide } from "react-awesome-reveal";
 
 const ShowSlider = () => {
   const settings = {
@@ -19,6 +20,7 @@ const ShowSlider = () => {
         {/* first slider  */}
         <div className="">
           <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-[30px] p-2">
+            <Slide>
             <div>
               <h2 className="text-[28px] md:text-[52px] text-center md:text-left font-bold">
                 Innovative <span className="text-[#2F57EF]">Language</span>
@@ -60,9 +62,12 @@ const ShowSlider = () => {
                 </button>
               </div>
             </div>
+            </Slide>
+            <Slide direction="right">
             <div>
               <img className="max-w-full" src="https://rainbowit.net/html/histudy/assets/images/banner/language-club.png" alt="" />
             </div>
+            </Slide>
           </div>
           
         </div>
