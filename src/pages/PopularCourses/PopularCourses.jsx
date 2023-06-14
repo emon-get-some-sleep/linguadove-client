@@ -5,7 +5,7 @@ import PopularClass from '../../shared/PopularClass/PopularClass';
 
 const PopularCourses = () => {
     const [popularClasses] = usePopularClasses();
-    console.log(popularClasses);
+    console.log();
     return (
         <div className='mt-[100px]'>
             <h2 className='text-[#192335] font-bold text-[25px] md:text-[42px] text-center'>Popular Classes</h2>
@@ -13,7 +13,7 @@ const PopularCourses = () => {
             <div className='grid px-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'> 
                 
                 {
-                    popularClasses.map(classInfo => <PopularClass key={classInfo.name} classInfo={classInfo}></PopularClass>)
+                    popularClasses.slice(0,6).map(classInfo => <PopularClass key={classInfo.name} classInfo={classInfo}></PopularClass>)
                 }
                 
                
