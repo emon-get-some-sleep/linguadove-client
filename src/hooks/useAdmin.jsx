@@ -5,12 +5,16 @@ import axios from 'axios';
 
 const useAdmin = () => {
     const {user ,loading} = useContext(AuthContext);
-
+    const token = localStorage.getItem('access-token');
     const {data: isAdmin, isLoading: isAdminLoading} = useQuery({
         queryKey: ['isAdmin', user?.email],
         enabled: !loading,
         queryFn: async() => {
-            const res = await axios.get(`http://localhost:5000/users/admin/${user?.email}`);
+            const res = await axios.get(`http://localhost:5000/users/admin/${user?.email}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                  },
+            });
             // console.log('is admin response', res);
             return res.data.admin;
         }

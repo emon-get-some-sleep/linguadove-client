@@ -4,10 +4,15 @@ import { AuthContext } from '../providers/AuthProviders';
 
 const useSelectedClass = () => {
     const {user} = useContext(AuthContext);
+    const token = localStorage.getItem('access-token');
     const {data: selectedClasses = [], isLoading: loading, refetch} = useQuery({
         queryKey: ['selected_classes'],
         queryFn: async() => {
-            const res = await fetch(`http://localhost:5000/selectclass/${user?.email}`);
+            const res = await fetch(`http://localhost:5000/selectclass/${user?.email}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                  },
+            });
             return res.json();
         }
         

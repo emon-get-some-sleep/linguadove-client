@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const SingleSelectClass = ({rowData, refetch}) => {
+    const token = localStorage.getItem('access-token');
     const {selectedClassId, _id, name, instructor_name, image, available_seat, price, status} = rowData;
     const navigate = useNavigate();
     const goToPayment = (selectedClass) => {
@@ -12,7 +13,11 @@ const SingleSelectClass = ({rowData, refetch}) => {
     }
     const handleDelete = (selectedClass) => {
         
-        axios.delete(`http://localhost:5000/selectclass/${selectedClass.selectedClassId}`)
+        axios.delete(`http://localhost:5000/selectclass/${selectedClass.selectedClassId}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then(data => {
           console.log(data);
           if(data.data.deletedCount > 0){

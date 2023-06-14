@@ -2,10 +2,15 @@ import React, { useId } from 'react';
 import Swal from 'sweetalert2';
 
 const SingleUser = ({userInfo, refetch}) => {
+    const token = localStorage.getItem('access-token');
     const {_id, name, email, role} = userInfo;
     const makeAdmin = user =>{
         fetch(`http://localhost:5000/users/admin/${user._id}`, {
-            method: 'PATCH'
+            method: 'PATCH',
+            headers: {
+              Authorization: `Bearer ${token}`,
+             
+            },
         })
         .then(res => res.json())
         .then(data => {
@@ -22,7 +27,11 @@ const SingleUser = ({userInfo, refetch}) => {
     }
     const makeInstructor = user =>{
         fetch(`http://localhost:5000/users/instructor/${user._id}`, {
-            method: 'PATCH'
+            method: 'PATCH',
+            headers: {
+              Authorization: `Bearer ${token}`,
+             
+            },
         })
         .then(res => res.json())
         .then(data => {

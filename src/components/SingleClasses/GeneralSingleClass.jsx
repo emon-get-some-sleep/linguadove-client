@@ -7,6 +7,7 @@ import useAdmin from '../../hooks/useAdmin';
 
 const GeneralSingleClass = ({rowData}) => {
     const [isInstructor] = useInstructor();
+    const token = localStorage.getItem('access-token');
     const [isAdmin] = useAdmin();
     const navigate = useNavigate();
     const {_id, name, instructor_name, image, available_seat, price, number_of_lesson, status, enrolled} = rowData;
@@ -20,6 +21,7 @@ const GeneralSingleClass = ({rowData}) => {
         fetch('http://localhost:5000/selectclass', {
           method: 'POST',
           headers: {
+            Authorization: `Bearer ${token}`,
             'content-type' : 'application/json'
           },
           body: JSON.stringify(selectedClass)
