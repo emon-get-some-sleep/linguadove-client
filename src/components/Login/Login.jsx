@@ -38,7 +38,7 @@ const Login = () => {
         .then(result => {
             const loggedInUser = result.user;
             console.log(loggedInUser);
-            const newUser = { name: loggedInUser.displayName, email: loggedInUser.email }
+            const newUser = { name: loggedInUser.displayName, email: loggedInUser.email, image: loggedInUser.photoURL }
             fetch('http://localhost:5000/users', {
                 method: 'POST',
                 headers: {

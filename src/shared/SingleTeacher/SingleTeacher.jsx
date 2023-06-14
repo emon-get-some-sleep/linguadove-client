@@ -20,9 +20,7 @@ const SingleTeacher = ({teacherInfo}) => {
                 </div>
               </td>
               <td>{email}</td>
-              <td>
-                <div className="badge badge-secondary">3</div>
-              </td>
+              
             </tr>
     );
 };

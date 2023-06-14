@@ -18,7 +18,7 @@ const Register = () => {
         .then(result => {
             const loggedInUser = result.user;
             console.log(loggedInUser);
-            const newUser = { name: loggedInUser.displayName, email: loggedInUser.email }
+            const newUser = { name: loggedInUser.displayName, email: loggedInUser.email, image: loggedInUser.displayName }
             fetch('http://localhost:5000/users', {
                 method: 'POST',
                 headers: {
@@ -53,7 +53,7 @@ const Register = () => {
 
         updateUserProfile(data.name, data.photoURL)
             .then(() => {
-                const saveUser = { name: data.name, email: data.email }
+                const saveUser = { name: data.name, email: data.email, image: data.photoURL }
                 fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {

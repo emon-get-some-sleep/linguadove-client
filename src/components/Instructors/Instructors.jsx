@@ -18,9 +18,6 @@ const Instructors = () => {
               <th className="bg-[#B260EC] text-white font-bold">Name</th>
               <th className="bg-[#B260EC] text-white font-bold">Image</th>
               <th className="bg-[#B260EC] text-white font-bold">Email</th>
-              <th className="bg-[#B260EC] text-white font-bold">
-                Number Of Classes
-              </th>
               <th className="bg-[#B260EC] text-white font-bold"></th>
             </tr>
           </thead>
