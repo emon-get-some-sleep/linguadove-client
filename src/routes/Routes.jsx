@@ -20,11 +20,13 @@ import PrivateRoutes from "./PrivateRoutes";
 import UpdateClass from "../components/SingleClasses/UpdateClass";
 import InstructorRoutes from "./InstructorRoutes";
 import AdminRoutes from "./AdminRoutes";
+import NotFound from "./NotFound";
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <NotFound></NotFound>,
       children: [
         {
             path: '/',
@@ -52,6 +54,7 @@ import AdminRoutes from "./AdminRoutes";
     {
       path: 'dashboard',
       element: <PrivateRoutes> <Dashboard></Dashboard></PrivateRoutes>,
+      errorElement: <NotFound></NotFound>,
       children: [
         {
           path: 'selectedclass',
