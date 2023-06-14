@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 import NavigationMenu from "../../pages/NavigationMenu/NavigationMenu";
 import useAdmin from "../../hooks/useAdmin";
 import useInstructor from "../../hooks/useInstructor";
-
+import { Slide } from "react-awesome-reveal";
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
   
@@ -17,6 +17,7 @@ const Dashboard = () => {
         <h2 className="text-2xl text-center text-white font-bold">Dashboard</h2>
      </div>
     <div className="flex gap-5">
+    <Slide>
     <div className="w-[250px] h-[100vh] bg-white p-3 md:p-2 left-0 border-2 rounded-lg hidden md:block">
         <div className="text-[#2F57EF] space-y-5">
             
@@ -57,6 +58,7 @@ const Dashboard = () => {
         </div>
         
     </div>
+    </Slide>
     <div className="w-[90%] mx-auto">
             <Outlet></Outlet>
     </div>

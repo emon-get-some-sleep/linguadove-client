@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProviders';
+import { Fade } from "react-awesome-reveal";
 
 const img_hosting_token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
 const AddClass = () => {
@@ -47,6 +48,7 @@ const AddClass = () => {
   return (
     <div className="flex flex-wrap min-h-screen  content-center justify-center  py-10">
       <div className="flex flex-col md:flex-row shadow-md">
+        <Fade>
         <div className="flex flex-wrap content-center justify-center rounded-l-md bg-white" style={{ width: ' 24rem', height: '37.5rem' }}>
           <div className="w-full md:w-72">
             <h1 className="text-xl font-semibold">ADD A NEW CLASS</h1>
@@ -130,14 +132,17 @@ const AddClass = () => {
             
           </div>
         </div>
+        </Fade>
 
         {/* style={{ width: '24rem', height: '35rem' }} */}
-        <div className="flex flex-wrap content-center justify-center rounded-r-md h-auto md:h-[35rem] w-full md:w-[24rem]">
+       <Fade delay="300">
+       <div className="flex flex-wrap content-center justify-center rounded-r-md h-auto md:h-[35rem] w-full md:w-[24rem]">
           <img
             className="w-full h-full bg-center bg-no-repeat bg-cover rounded-r-md"
             src="https://img.freepik.com/free-vector/flat-international-mother-language-day-illustration_23-2149219243.jpg?w=740&t=st=1686406793~exp=1686407393~hmac=74579721cbdc63e8a07d098a002908d762b4ae72967b208e8d701513d945ae5c"
           />
         </div>
+       </Fade>
       </div>
 
 

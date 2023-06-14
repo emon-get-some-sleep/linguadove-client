@@ -6,11 +6,13 @@ import {
     FaMapMarker,
     FaTwitter,
   } from "react-icons/fa";
+import { Zoom } from "react-awesome-reveal";
 
 const PopularTeacher = ({teacherInfo}) => {
     const {name, image, age, location} = teacherInfo;
     return (
-        <div className="bg-[#6A31C1] py-5 px-5 rounded-[30px]">
+        <Zoom>
+          <div className="bg-[#6A31C1] py-5 px-5 rounded-[30px]">
           <div className="my-[40px]">
             <h2 className="font-bold text-white text-2xl mb-5">
               {name}
@@ -50,6 +52,7 @@ const PopularTeacher = ({teacherInfo}) => {
             </div>
           </div>
         </div>
+        </Zoom>
     );
 };
 
