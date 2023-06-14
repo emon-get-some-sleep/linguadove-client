@@ -18,6 +18,8 @@ import Payment from "../shared/Payment/Payment";
 import PaymentHistory from "../components/PaymentHistory/PaymentHistory";
 import PrivateRoutes from "./PrivateRoutes";
 import UpdateClass from "../components/SingleClasses/UpdateClass";
+import InstructorRoutes from "./InstructorRoutes";
+import AdminRoutes from "./AdminRoutes";
 
   const router = createBrowserRouter([
     {
@@ -71,19 +73,19 @@ import UpdateClass from "../components/SingleClasses/UpdateClass";
         },
         {
           path: 'addaclass',
-          element: <AddClass></AddClass>
+          element: <InstructorRoutes><AddClass></AddClass></InstructorRoutes>
         },
         {
           path: 'myclasses',
-          element: <MyClasses></MyClasses>
+          element: <InstructorRoutes><MyClasses></MyClasses></InstructorRoutes>
         },
         {
           path: 'manageclasses',
-          element: <ManageClasses></ManageClasses>
+          element: <AdminRoutes><ManageClasses></ManageClasses></AdminRoutes>
         },
         {
           path: 'manageusers',
-          element: <ManageUsers></ManageUsers>
+          element: <AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
         },
         {
           path: 'history',
