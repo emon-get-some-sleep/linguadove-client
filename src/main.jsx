@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import {
-  RouterProvider
+  RouterProvider,
+  ScrollRestoration
 } from "react-router-dom";
 import router from './routes/Routes.jsx';
 import { useQuery, QueryClient, QueryClientProvider } from "react-query";
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <QueryClientProvider client={queryClient}>
       <div className='max-w-screen-xl mx-auto overflow-hidden'>
           <RouterProvider router={router} />
+          
         </div>
       
       </QueryClientProvider>

@@ -1,7 +1,7 @@
 import React from 'react';
 import useEnrolledClasses from '../../hooks/useEnrolledClasses';
 import SinglePaymentHistory from './SinglePaymentHistory';
-
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
 const PaymentHistory = () => {
     const [enrolledClasses] = useEnrolledClasses();
     const compareDates = (paymentA, paymentB) => {
@@ -14,9 +14,12 @@ const PaymentHistory = () => {
       console.log(enrolledClasses)
     return (
         <div className=''>
+        <Slide>
         <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center mb-10">
          Payment Hisotry
         </h2>
+        </Slide>
+        <Zoom>
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}
@@ -40,6 +43,7 @@ const PaymentHistory = () => {
             </tbody>
           </table>
         </div>
+        </Zoom>
       </div>
     );
 };

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProviders';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-
+import { Fade, Slide } from "react-awesome-reveal";
 const SingleClasses = ({rowData}) => {
     const navigate = useNavigate();
     const {_id, name, instructor_name, image, available_seat, price, number_of_lesson, status, feedback, enrolled} = rowData;
@@ -13,7 +13,8 @@ const SingleClasses = ({rowData}) => {
       navigate(url);
     }
     return (
-        <tr>
+        
+          <tr>
               <td>
                 <p>{name}</p>
               </td>
@@ -44,7 +45,8 @@ const SingleClasses = ({rowData}) => {
               <td>
                 {feedback ? feedback : '...'}
               </td>
-            </tr>
+        </tr>
+      
     );
 };
 

@@ -1,15 +1,18 @@
 import React from 'react';
 import useSelectedClass from '../../hooks/useSelectedClass';
 import SingleSelectClass from '../../shared/SingleSelectClass/SingleSelectClass';
-
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
 const SelectedClass = () => {
   const [selectedClasses, , refetch] = useSelectedClass();
   console.log(selectedClasses);
     return (
         <div>
-        <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center mb-10">
+       <Slide>
+       <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center mb-10">
          Selected Classes
         </h2>
+       </Slide>
+        <Zoom>
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}
@@ -34,6 +37,7 @@ const SelectedClass = () => {
             </tbody>
           </table>
         </div>
+        </Zoom>
       </div>
     );
 };

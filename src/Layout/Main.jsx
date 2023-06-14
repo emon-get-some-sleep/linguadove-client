@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 import NavigationMenu from '../pages/NavigationMenu/NavigationMenu';
 import Footer from '../pages/Footer/Footer';
 
@@ -9,6 +9,7 @@ const Main = () => {
             <NavigationMenu></NavigationMenu>
             <Outlet></Outlet>
             <Footer></Footer>
+            <ScrollRestoration />
         </div>
     );
 };

@@ -1,15 +1,19 @@
 import React from 'react';
 import useUsers from '../../hooks/useUsers';
 import SingleUser from '../../shared/SingleUser/SingleUser';
+import { Slide, Zoom } from 'react-awesome-reveal';
 
 const ManageUsers = () => {
     const [allUsers, , refetch] = useUsers();
 
     return (
         <div className=''>
+        <Slide>
         <h2 className="text-[#192335] font-bold text-[25px] md:text-[42px] text-center mb-10">
          Manage Users
         </h2>
+        </Slide>
+        <Zoom>
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}
@@ -32,6 +36,7 @@ const ManageUsers = () => {
             </tbody>
           </table>
         </div>
+        </Zoom>
       </div>
     );
 };
