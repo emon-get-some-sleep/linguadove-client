@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPlayCircle, FaUsers } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const PopularClass = ({classInfo}) => {
     const {name, instructor_name, image, available_seat, number_of_lesson, price, country} = classInfo;
@@ -26,9 +27,11 @@ const PopularClass = ({classInfo}) => {
                             <p className='font-medium'>Available Seats {available_seat}</p>
                         </div>
                     </div>
+                    <Link to="/classes">
                     <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded">
                   Select
                 </button>
+                </Link>
                 </div>
     );
 };

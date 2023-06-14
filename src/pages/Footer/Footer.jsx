@@ -58,12 +58,12 @@ const Footer = () => {
         <h2 className="font-bold text-xl mb-5">Get Contact</h2>
         <Link className="text-[#6B7385]">Phone : (406) 555-0120</Link>
         <Link className="text-[#6B7385]">Email: admin@example.com</Link>
-        <h2 className="font-bold my-5">News Letter</h2>
+        <h2 className="font-bold">News Letter</h2>
         <p>
         2000+ Our students are subscribe Around the World.<br />
         Don’t be shy introduce yourself!
         </p>
-        <input type="text" className="border-0 outline-none my-3 h-[40px]" placeholder="Email Here" />
+        <input type="text" className="border-0 outline-none h-[40px]" placeholder="Email Here" />
         <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] border-2 border-gradient rounded-lg px-4 py-2 text-white">
         Subscribe Now
     </button>
