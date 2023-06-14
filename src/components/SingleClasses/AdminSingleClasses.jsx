@@ -12,7 +12,7 @@ const AdminSingleClasses = ({ rowData, refetch, currentId, setCurrentId }) => {
    setCurrentId(whatClass._id);
   }
   const approveClass = (whatClass) => {
-    fetch(`http://localhost:5000/class/admin/approve/${whatClass._id}`, {
+    fetch(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/class/admin/approve/${whatClass._id}`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -28,7 +28,7 @@ const AdminSingleClasses = ({ rowData, refetch, currentId, setCurrentId }) => {
       });
   };
   const denyClass = (whatClass) => {
-    fetch(`http://localhost:5000/class/admin/deny/${whatClass._id}`, {
+    fetch(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/class/admin/deny/${whatClass._id}`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -53,7 +53,7 @@ const AdminSingleClasses = ({ rowData, refetch, currentId, setCurrentId }) => {
     const feedback = feedbackRef.current.value;
     
     // console.log(feedback, currentId);
-    axios.patch(`http://localhost:5000/class/admin/feedback/${currentId}`, {feedback : feedback}, {
+    axios.patch(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/class/admin/feedback/${currentId}`, {feedback : feedback}, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

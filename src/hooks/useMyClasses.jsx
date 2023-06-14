@@ -8,7 +8,7 @@ const useMyClasses = () => {
     const {data: myClasses = [], isLoading: loading, refetch} = useQuery({
         queryKey: ['my_classes'],
         queryFn: async() => {
-            const res = await fetch(`http://localhost:5000/classes/${user?.email}`, {
+            const res = await fetch(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/classes/${user?.email}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                   },

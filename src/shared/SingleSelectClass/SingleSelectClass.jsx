@@ -13,7 +13,7 @@ const SingleSelectClass = ({rowData, refetch}) => {
     }
     const handleDelete = (selectedClass) => {
         
-        axios.delete(`http://localhost:5000/selectclass/${selectedClass.selectedClassId}`, {
+        axios.delete(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/selectclass/${selectedClass.selectedClassId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

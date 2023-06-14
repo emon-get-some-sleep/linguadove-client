@@ -4,7 +4,7 @@ const usePopularTeacher = () => {
     const {data: popularTeachers = [], isLoading: loading, refetch} = useQuery({
         queryKey: ['popular_teachers'],
         queryFn: async() => {
-            const res = await fetch('http://localhost:5000/teachers');
+            const res = await fetch('https://lingua-dove-server-emon-get-some-sleep.vercel.app/teachers');
             return res.json();
         }
         

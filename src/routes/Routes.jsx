@@ -67,12 +67,12 @@ import NotFound from "./NotFound";
         {
           path: 'payment/:id',
           element: <Payment></Payment>,
-          loader: ({params}) => fetch(`http://localhost:5000/paymentinfo/${params.id}`)
+          loader: ({params}) => fetch(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/paymentinfo/${params.id}`)
         },
         {
           path: 'updateclass/:id',
           element: <UpdateClass></UpdateClass>,
-          loader: ({params}) => fetch(`http://localhost:5000/classinfo/${params.id}`)
+          loader: ({params}) => fetch(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/classinfo/${params.id}`)
         },
         {
           path: 'addaclass',

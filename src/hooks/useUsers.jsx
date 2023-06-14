@@ -6,7 +6,7 @@ const useUsers = () => {
     const {data: allUsers = [], isLoading: loading, refetch} = useQuery({
         queryKey: ['all_users'],
         queryFn: async() => {
-            const res = await fetch('http://localhost:5000/users', {
+            const res = await fetch('https://lingua-dove-server-emon-get-some-sleep.vercel.app/users', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                   },

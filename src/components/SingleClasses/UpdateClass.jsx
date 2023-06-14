@@ -24,7 +24,7 @@ const UpdateClass = () => {
           const newClass = {name,  price: parseFloat(price), number_of_lesson, available_seat: parseFloat(available_seat,)};
           newClass.status= classInfo.status
           console.log(newClass);
-          axios.patch(`http://localhost:5000/newclass/${classInfo._id}`, newClass,  {
+          axios.patch(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/newclass/${classInfo._id}`, newClass,  {
             headers: {
               Authorization: `Bearer ${token}`,
             },

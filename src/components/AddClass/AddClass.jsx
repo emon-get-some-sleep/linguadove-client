@@ -29,7 +29,7 @@ const AddClass = () => {
 } = data;
           const newClass = {name, image: imageURL, price: parseFloat(price), instructor_email, instructor_name, number_of_lesson, available_seat: parseFloat(available_seat)};
           console.log(newClass);
-          axios.post('http://localhost:5000/newclass', newClass, {
+          axios.post('https://lingua-dove-server-emon-get-some-sleep.vercel.app/newclass', newClass, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

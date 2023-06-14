@@ -18,7 +18,7 @@ const GeneralSingleClass = ({rowData}) => {
       if(user && user.email){
         const selectedClass = {selectedClassId: _id, name, number_of_lesson, instructor_name, image, available_seat, price, status, email:user?.email};
   
-        fetch('http://localhost:5000/selectclass', {
+        fetch('https://lingua-dove-server-emon-get-some-sleep.vercel.app/selectclass', {
           method: 'POST',
           headers: {
             Authorization: `Bearer ${token}`,

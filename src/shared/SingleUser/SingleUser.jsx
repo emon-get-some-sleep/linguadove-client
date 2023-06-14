@@ -5,7 +5,7 @@ const SingleUser = ({userInfo, refetch}) => {
     const token = localStorage.getItem('access-token');
     const {_id, name, email, role} = userInfo;
     const makeAdmin = user =>{
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH',
             headers: {
               Authorization: `Bearer ${token}`,
@@ -26,7 +26,7 @@ const SingleUser = ({userInfo, refetch}) => {
         })
     }
     const makeInstructor = user =>{
-        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        fetch(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/users/instructor/${user._id}`, {
             method: 'PATCH',
             headers: {
               Authorization: `Bearer ${token}`,

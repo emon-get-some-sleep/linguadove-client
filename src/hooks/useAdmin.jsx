@@ -10,7 +10,7 @@ const useAdmin = () => {
         queryKey: ['isAdmin', user?.email],
         enabled: !loading,
         queryFn: async() => {
-            const res = await axios.get(`http://localhost:5000/users/admin/${user?.email}`, {
+            const res = await axios.get(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/users/admin/${user?.email}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                   },

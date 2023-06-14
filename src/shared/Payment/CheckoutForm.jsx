@@ -19,7 +19,7 @@ const CheckoutForm = ({ classData }) => {
     // console.log(price);
     useEffect(() => {
         if (classData.price > 0) {
-            axios.post('http://localhost:5000/create-payment-intent', { price }, {
+            axios.post('https://lingua-dove-server-emon-get-some-sleep.vercel.app/create-payment-intent', { price }, {
                 headers: {
                     Authorization: `Bearer ${token}`
                   },
@@ -101,7 +101,7 @@ const CheckoutForm = ({ classData }) => {
 
                 
             }
-            axios.post('http://localhost:5000/payments', payment)
+            axios.post('https://lingua-dove-server-emon-get-some-sleep.vercel.app/payments', payment)
                 .then(res => {
                     console.log(res.data);
                     if (res.data.insertedId) {

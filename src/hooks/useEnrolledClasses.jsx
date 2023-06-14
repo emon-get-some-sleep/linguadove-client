@@ -9,7 +9,7 @@ const useEnrolledClasses = () => {
         queryKey: ['enrolled_classes'],
         enabled: !loading,
         queryFn: async() => {
-            const res = await fetch(`http://localhost:5000/enrolledclasses/${user?.email}`, {
+            const res = await fetch(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/enrolledclasses/${user?.email}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                   },

@@ -39,10 +39,7 @@ const NavigationMenu = () => {
           <Link to="/" className="hover:text-[#2f57ef]">
             Home
           </Link>
-          <Link to="/pages" className="hover:text-[#2f57ef]">
-            Pages
-          </Link>
-          <Link to="dashboard" className="hover:text-[#2f57ef]">
+          <Link to="/dashboard" className="hover:text-[#2f57ef]">
             Dashboard
           </Link>
           <Link to="/instructors" className="hover:text-[#2f57ef]">
@@ -50,9 +47,6 @@ const NavigationMenu = () => {
           </Link>
           <Link to="/classes" className="hover:text-[#2f57ef]">
             Classes
-          </Link>
-          <Link to="/login" className="hover:text-[#2f57ef]">
-            Login
           </Link>
         </div>
 
@@ -70,9 +64,11 @@ const NavigationMenu = () => {
         </>
           :
           <>
+          <Link to="/login">
           <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded hidden md:block">
             Login
           </button>
+          </Link>
           </>
           
           }
@@ -100,17 +96,14 @@ const NavigationMenu = () => {
           <Link to="/" className="hover:text-[#2f57ef] border-b flex justify-center w-full">
             Home
           </Link>
-          <Link to="/pages" className="hover:text-[#2f57ef] border-b flex justify-center w-full">
-            Pages
-          </Link>
           <Link to="/dashboard" className="hover:text-[#2f57ef] border-b flex justify-center w-full">
             Dashboard
           </Link>
-          <Link to="/blogs" className="hover:text-[#2f57ef] border-b flex justify-center w-full">
-            Blogs
+          <Link to="/classses" className="hover:text-[#2f57ef] border-b flex justify-center w-full">
+            Classes
           </Link>
-          <Link to="/courses" className="hover:text-[#2f57ef] border-b flex justify-center w-full">
-            Courses
+          <Link to="/instructors" className="hover:text-[#2f57ef] border-b flex justify-center w-full">
+          Instructors
           </Link>
         </div>
       </div>

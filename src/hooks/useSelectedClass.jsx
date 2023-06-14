@@ -8,7 +8,7 @@ const useSelectedClass = () => {
     const {data: selectedClasses = [], isLoading: loading, refetch} = useQuery({
         queryKey: ['selected_classes'],
         queryFn: async() => {
-            const res = await fetch(`http://localhost:5000/selectclass/${user?.email}`, {
+            const res = await fetch(`https://lingua-dove-server-emon-get-some-sleep.vercel.app/selectclass/${user?.email}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                   },
