@@ -105,6 +105,29 @@ const NavigationMenu = () => {
           <Link to="/instructors" className="hover:text-[#2f57ef] border-b flex justify-center w-full">
           Instructors
           </Link>
+          
+          <div className="flex flex-col items-center gap-3">
+          {user 
+          ?
+          <>
+          <button onClick={LogOut} className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Log Out
+          </button>
+          <div className="tooltip" data-tip={user?.displayName}>
+          <img src={user?.photoURL} className="w-[30px] h-[30px] rounded-[50%]" alt="" />
+        </div>
+        </>
+          :
+          <>
+          <Link to="/login">
+          <button className="bg-gradient-to-r from-[#2f57ef] to-[#B260EC] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Login
+          </button>
+          </Link>
+          </>
+          
+          }
+        </div>
         </div>
       </div>
       </div>
