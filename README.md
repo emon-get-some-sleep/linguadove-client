@@ -1,5 +1,5 @@
 
-**LinguaDove**
+# LinguaDove : Learn Any Language
 
 
 LinguaDove is a language teaching website that allows users to purchase courses and enroll in them. Instructors can sell their classes through the platform, and administrators have full control over managing the website.
